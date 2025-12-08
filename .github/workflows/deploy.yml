@@ -27,16 +27,25 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install registry dependencies
+        run: cd registry && npm install
 
       - name: Build registry
+        run: cd registry && npm run build
+
+      - name: Install website dependencies
+        run: npm install
+
+      - name: Build website
         run: npm run build
+
+      - name: Copy registry to website output
+        run: cp -r registry/public out/r
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./out
 
   deploy:
     environment:

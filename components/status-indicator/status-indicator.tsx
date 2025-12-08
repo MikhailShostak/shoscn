@@ -1,6 +1,8 @@
+'use client';
+
 import type { HTMLAttributes } from 'react';
 
-import { cn } from '@/registry/lib/utils';
+import { cn } from '@/lib/utils';
 
 type StatusVariant = 'primary' | 'secondary' | 'muted' | 'accent' | 'success' | 'warning' | 'destructive';
 

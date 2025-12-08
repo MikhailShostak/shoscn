@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shoscn",
+  "homepage": "https://mikhailshostak.github.io/shoscn",
+  "items": [
+    {
+      "name": "status-indicator",
+      "type": "registry:ui",
+      "title": "Status Indicator",
+      "description": "An animated status indicator with multiple color variants",
+      "files": [
+        {
+          "path": "components/ui/utils/status-indicator.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    }
+  ]
+}

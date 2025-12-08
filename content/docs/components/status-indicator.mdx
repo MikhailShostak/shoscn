@@ -1,0 +1,119 @@
+---
+title: Status Indicator
+description: An animated status indicator with multiple color variants.
+---
+
+import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <div className="flex items-center gap-2">
+      <StatusIndicator variant="success" />
+      <span className="text-sm">Online</span>
+    </div>
+  }
+  code={`import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-2">
+      <StatusIndicator variant="success" />
+      <span>Online</span>
+    </div>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/status-indicator
+```
+
+## Usage
+
+```tsx
+import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+
+export default function MyComponent() {
+  return <StatusIndicator variant="success" />;
+}
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview
+  preview={
+    <div className="flex flex-wrap items-center gap-8">
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="primary" />
+        <span className="text-sm">Primary</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="secondary" />
+        <span className="text-sm">Secondary</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="success" />
+        <span className="text-sm">Success</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="warning" />
+        <span className="text-sm">Warning</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="destructive" />
+        <span className="text-sm">Destructive</span>
+      </div>
+    </div>
+  }
+  code={`<StatusIndicator variant="primary" />
+<StatusIndicator variant="secondary" />
+<StatusIndicator variant="success" />
+<StatusIndicator variant="warning" />
+<StatusIndicator variant="destructive" />`}
+/>
+
+### With Labels
+
+<ComponentPreview
+  preview={
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="success" />
+        <span className="text-sm font-medium">System Online</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="warning" />
+        <span className="text-sm font-medium">Limited Capacity</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <StatusIndicator variant="destructive" />
+        <span className="text-sm font-medium">Service Unavailable</span>
+      </div>
+    </div>
+  }
+  code={`<div className="flex items-center gap-2">
+  <StatusIndicator variant="success" />
+  <span>System Online</span>
+</div>
+<div className="flex items-center gap-2">
+  <StatusIndicator variant="warning" />
+  <span>Limited Capacity</span>
+</div>
+<div className="flex items-center gap-2">
+  <StatusIndicator variant="destructive" />
+  <span>Service Unavailable</span>
+</div>`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `primary \| secondary \| muted \| accent \| success \| warning \| destructive` | - | The color variant of the indicator |
+| `className` | `string` | - | Additional CSS classes |
