@@ -3,7 +3,7 @@ title: Status Indicator
 description: An animated status indicator with multiple color variants.
 ---
 
-import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 
 ## Preview
 
@@ -14,7 +14,7 @@ import { StatusIndicator } from '@/components/status-indicator/status-indicator'
       <span className="text-sm">Online</span>
     </div>
   }
-  code={`import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+  code={`import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 
 export default function Example() {
   return (
@@ -35,7 +35,7 @@ npx shadcn@latest add @shoscn/status-indicator
 ## Usage
 
 ```tsx
-import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 
 export default function MyComponent() {
   return <StatusIndicator variant="success" />;
