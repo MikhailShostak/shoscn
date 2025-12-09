@@ -3,6 +3,27 @@ title: Page
 description: A flexible page container with padding
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { PageBasic } from '@/components/examples/layout-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<PageBasic />}
+  code={`import { Page } from '@/components/ui/layouts/page';
+
+export default function Example() {
+  return (
+    <div className="h-64 border rounded overflow-hidden">
+      <Page>
+        <h1 className="text-2xl font-bold mb-4">Page Title</h1>
+        <p>This is the page content with automatic padding.</p>
+      </Page>
+    </div>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash

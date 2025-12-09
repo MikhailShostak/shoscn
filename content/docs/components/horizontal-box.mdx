@@ -3,6 +3,45 @@ title: Horizontal Box
 description: A horizontal flexbox layout component with optional reverse direction
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { HorizontalBoxBasic, HorizontalBoxReversed } from '@/components/examples/layout-examples';
+
+## Preview
+
+### Basic
+
+<ComponentPreview
+  preview={<HorizontalBoxBasic />}
+  code={`import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+
+export default function Example() {
+  return (
+    <HorizontalBox>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </HorizontalBox>
+  );
+}`}
+/>
+
+### Reversed
+
+<ComponentPreview
+  preview={<HorizontalBoxReversed />}
+  code={`import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+
+export default function Example() {
+  return (
+    <HorizontalBox reversed>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First (right)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third (left)</div>
+    </HorizontalBox>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
@@ -30,37 +69,3 @@ export default function MyComponent() {
 | --- | --- | --- | --- |
 | `children` | `React.ReactNode` | - | Child elements to display in the horizontal layout |
 | `reversed` | `boolean` | `false` | Reverse the order of children (right to left) |
-
-## Examples
-
-### Basic
-
-```tsx
-import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
-
-export default function Example() {
-  return (
-    <HorizontalBox>
-      <div>First</div>
-      <div>Second</div>
-      <div>Third</div>
-    </HorizontalBox>
-  );
-}
-```
-
-### Reversed
-
-```tsx
-import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
-
-export default function Example() {
-  return (
-    <HorizontalBox reversed>
-      <div>First (appears on right)</div>
-      <div>Second (appears in middle)</div>
-      <div>Third (appears on left)</div>
-    </HorizontalBox>
-  );
-}
-```

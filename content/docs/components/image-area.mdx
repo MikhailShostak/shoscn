@@ -3,6 +3,29 @@ title: Image Area
 description: A fixed area with a blurred background image effect
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { ImageAreaBasic } from '@/components/examples/layout-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<ImageAreaBasic />}
+  code={`import { ImageArea } from '@/components/ui/layouts/image-area';
+
+export default function Example() {
+  return (
+    <div className="h-64 border rounded overflow-hidden relative">
+      <ImageArea src="/background.jpg">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold mb-2">Welcome</h1>
+          <p className="text-xl">Beautiful blurred background</p>
+        </div>
+      </ImageArea>
+    </div>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
@@ -46,9 +69,7 @@ The component creates a layered effect:
 - Centered content overlay
 - Customizable opacity and blur
 
-## Examples
-
-### Basic
+## Example
 
 ```tsx
 import { ImageArea } from '@/components/ui/layouts/image-area';
@@ -59,26 +80,6 @@ export default function Hero() {
       <div className="text-center text-white">
         <h1 className="text-4xl font-bold">Welcome</h1>
         <p className="text-xl">Beautiful blurred background</p>
-      </div>
-    </ImageArea>
-  );
-}
-```
-
-### With Custom Styling
-
-```tsx
-import { ImageArea } from '@/components/ui/layouts/image-area';
-
-export default function Profile() {
-  return (
-    <ImageArea
-      src="/profile-bg.jpg"
-      className="bg-black/20 backdrop-blur-sm"
-    >
-      <div className="max-w-2xl">
-        <img src="/avatar.jpg" className="rounded-full w-32 h-32 mx-auto" />
-        <h2 className="text-2xl font-bold text-white mt-4">John Doe</h2>
       </div>
     </ImageArea>
   );

@@ -3,6 +3,29 @@ title: Grid
 description: A responsive grid layout component
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { GridBasic } from '@/components/examples/layout-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<GridBasic />}
+  code={`import { Grid } from '@/components/ui/layouts/grid';
+
+export default function Example() {
+  return (
+    <Grid>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 1</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 2</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 3</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 4</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 5</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 6</div>
+    </Grid>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash

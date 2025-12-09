@@ -3,6 +3,45 @@ title: Vertical Box
 description: A vertical flexbox layout component with optional reverse direction
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { VerticalBoxBasic, VerticalBoxReversed } from '@/components/examples/layout-examples';
+
+## Preview
+
+### Basic
+
+<ComponentPreview
+  preview={<VerticalBoxBasic />}
+  code={`import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export default function Example() {
+  return (
+    <VerticalBox>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </VerticalBox>
+  );
+}`}
+/>
+
+### Reversed
+
+<ComponentPreview
+  preview={<VerticalBoxReversed />}
+  code={`import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export default function Example() {
+  return (
+    <VerticalBox reversed>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First (bottom)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third (top)</div>
+    </VerticalBox>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
@@ -30,37 +69,3 @@ export default function MyComponent() {
 | --- | --- | --- | --- |
 | `children` | `React.ReactNode` | - | Child elements to display in the vertical layout |
 | `reversed` | `boolean` | `false` | Reverse the order of children (bottom to top) |
-
-## Examples
-
-### Basic
-
-```tsx
-import { VerticalBox } from '@/components/ui/layouts/vertical-box';
-
-export default function Example() {
-  return (
-    <VerticalBox>
-      <div>First</div>
-      <div>Second</div>
-      <div>Third</div>
-    </VerticalBox>
-  );
-}
-```
-
-### Reversed
-
-```tsx
-import { VerticalBox } from '@/components/ui/layouts/vertical-box';
-
-export default function Example() {
-  return (
-    <VerticalBox reversed>
-      <div>First (appears at bottom)</div>
-      <div>Second (appears in middle)</div>
-      <div>Third (appears at top)</div>
-    </VerticalBox>
-  );
-}
-```

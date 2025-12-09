@@ -3,6 +3,51 @@ title: Fixed Area
 description: A fixed area container with absolute positioning and centered content
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { FixedAreaBasic, FixedAreaStyled } from '@/components/examples/layout-examples';
+
+## Preview
+
+### Basic
+
+<ComponentPreview
+  preview={<FixedAreaBasic />}
+  code={`import { FixedArea } from '@/components/ui/layouts/fixed-area';
+
+export default function Example() {
+  return (
+    <div className="h-64 border rounded overflow-hidden relative">
+      <FixedArea>
+        <div className="text-center">
+          <h2 className="text-xl font-bold">Centered Content</h2>
+          <p className="text-muted-foreground">This content is perfectly centered</p>
+        </div>
+      </FixedArea>
+    </div>
+  );
+}`}
+/>
+
+### With Custom Styling
+
+<ComponentPreview
+  preview={<FixedAreaStyled />}
+  code={`import { FixedArea } from '@/components/ui/layouts/fixed-area';
+
+export default function Example() {
+  return (
+    <div className="h-64 border rounded overflow-hidden relative">
+      <FixedArea className="bg-gradient-to-br from-blue-500/20 to-purple-600/20">
+        <div className="text-center">
+          <h2 className="text-xl font-bold">Stylized Container</h2>
+          <p className="text-muted-foreground">With gradient background</p>
+        </div>
+      </FixedArea>
+    </div>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
@@ -35,38 +80,3 @@ export default function MyComponent() {
 The component creates a two-layer structure:
 1. Outer layer: `relative flex-1` - Takes up available space
 2. Inner layer: `absolute inset-0 flex items-center justify-center` - Absolutely positioned to fill parent and center content
-
-## Examples
-
-### Basic
-
-```tsx
-import { FixedArea } from '@/components/ui/layouts/fixed-area';
-
-export default function Example() {
-  return (
-    <FixedArea>
-      <div className="text-center">
-        <h1>Centered Title</h1>
-        <p>This content is perfectly centered</p>
-      </div>
-    </FixedArea>
-  );
-}
-```
-
-### With Custom Styling
-
-```tsx
-import { FixedArea } from '@/components/ui/layouts/fixed-area';
-
-export default function Example() {
-  return (
-    <FixedArea className="bg-gradient-to-br from-blue-500 to-purple-600">
-      <div className="text-white">
-        <h1>Stylized Container</h1>
-      </div>
-    </FixedArea>
-  );
-}
-```
