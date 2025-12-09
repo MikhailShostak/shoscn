@@ -1,0 +1,103 @@
+---
+title: useDebounce
+description: A hook for debouncing callback functions with cancel functionality
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/use-debounce
+```
+
+## Usage
+
+```tsx
+import { useDebounce } from '@/components/hooks/use-debounce';
+
+export default function SearchInput() {
+  const handleSearch = (value: string) => {
+    console.log('Searching for:', value);
+  };
+
+  const debouncedSearch = useDebounce(handleSearch, 300);
+
+  return (
+    <input
+      type="text"
+      onChange={(e) => debouncedSearch(e.target.value)}
+      placeholder="Search..."
+    />
+  );
+}
+```
+
+## API Reference
+
+### Parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `callback` | `(value: string) => void` | The function to debounce |
+| `delay` | `number` | The delay in milliseconds |
+
+### Return Value
+
+Returns a debounced function with a `cancel` method attached to it.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `debouncedFn` | `(value: string) => void` | The debounced function |
+| `cancel` | `() => void` | Cancels any pending debounced calls |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import { useDebounce } from '@/components/hooks/use-debounce';
+
+export default function Example() {
+  const handleChange = (value: string) => {
+    // This will only be called 300ms after the user stops typing
+    console.log(value);
+  };
+
+  const debouncedChange = useDebounce(handleChange, 300);
+
+  return (
+    <input
+      type="text"
+      onChange={(e) => debouncedChange(e.target.value)}
+    />
+  );
+}
+```
+
+### With Cancel
+
+```tsx
+import { useDebounce } from '@/components/hooks/use-debounce';
+
+export default function Example() {
+  const handleSearch = (value: string) => {
+    // Perform search
+  };
+
+  const debouncedSearch = useDebounce(handleSearch, 500);
+
+  const handleReset = () => {
+    // Cancel any pending search
+    debouncedSearch.cancel();
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        onChange={(e) => debouncedSearch(e.target.value)}
+      />
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  );
+}
+```

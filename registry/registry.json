@@ -113,6 +113,21 @@
       "registryDependencies": []
     },
     {
+      "name": "use-debounce",
+      "type": "registry:hook",
+      "title": "useDebounce",
+      "description": "A hook for debouncing callback functions with cancel functionality",
+      "files": [
+        {
+          "path": "components/hooks/use-debounce.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-debounce.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "grid",
       "type": "registry:ui",
       "title": "Grid",
