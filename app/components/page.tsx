@@ -1,8 +1,11 @@
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
+import { FixedArea } from '@/components/ui/layouts/fixed-area';
 import { Grid } from '@/components/ui/layouts/grid';
 import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+import { ImageArea } from '@/components/ui/layouts/image-area';
+import { Page } from '@/components/ui/layouts/page';
 import { VerticalBox } from '@/components/ui/layouts/vertical-box';
 import IFrame from '@/components/ui/utils/iframe';
 import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
@@ -12,6 +15,18 @@ import { TypingDots } from '@/components/ui/chat/typing-dots';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
+  {
+    name: 'Fixed Area',
+    slug: 'fixed-area',
+    description: 'A fixed area container with absolute positioning and centered content',
+    preview: (
+      <div className="w-full h-20 relative">
+        <FixedArea>
+          <div className="w-8 h-8 bg-primary rounded" />
+        </FixedArea>
+      </div>
+    ),
+  },
   {
     name: 'Grid',
     slug: 'grid',
@@ -33,6 +48,30 @@ const components = [
         <div className="w-6 h-6 bg-primary rounded" />
         <div className="w-6 h-6 bg-primary rounded" />
       </HorizontalBox>
+    ),
+  },
+  {
+    name: 'Image Area',
+    slug: 'image-area',
+    description: 'A fixed area with a blurred background image effect',
+    preview: (
+      <div className="w-full h-20 relative overflow-hidden rounded">
+        <ImageArea src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23667eea' width='100' height='100'/%3E%3C/svg%3E">
+          <div className="w-8 h-8 bg-white rounded" />
+        </ImageArea>
+      </div>
+    ),
+  },
+  {
+    name: 'Page',
+    slug: 'page',
+    description: 'A flexible page container with padding',
+    preview: (
+      <div className="w-full h-20 border rounded overflow-hidden">
+        <Page>
+          <div className="text-xs text-muted-foreground">Page Content</div>
+        </Page>
+      </div>
     ),
   },
   {

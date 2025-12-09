@@ -30,8 +30,11 @@ const navigation = [
       {
         title: 'Layouts',
         items: [
+          { title: 'Fixed Area', href: '/components/fixed-area' },
           { title: 'Grid', href: '/components/grid' },
           { title: 'Horizontal Box', href: '/components/horizontal-box' },
+          { title: 'Image Area', href: '/components/image-area' },
+          { title: 'Page', href: '/components/page' },
           { title: 'Vertical Box', href: '/components/vertical-box' },
         ],
       },

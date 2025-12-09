@@ -1,0 +1,57 @@
+---
+title: Page
+description: A flexible page container with padding
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/page
+```
+
+## Usage
+
+```tsx
+import { Page } from '@/components/ui/layouts/page';
+
+export default function MyComponent() {
+  return (
+    <Page>
+      <h1>Page Content</h1>
+      <p>Your content here...</p>
+    </Page>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display in the page |
+
+## Features
+
+- Flexible layout with `flex-1` to fill available space
+- Built-in padding (`p-2`) for consistent spacing
+- Client component for interactive features
+
+## Example
+
+```tsx
+import { Page } from '@/components/ui/layouts/page';
+import { Card } from '@/components/ui/card';
+
+export default function Dashboard() {
+  return (
+    <Page>
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <div className="grid grid-cols-3 gap-4">
+        <Card>Card 1</Card>
+        <Card>Card 2</Card>
+        <Card>Card 3</Card>
+      </div>
+    </Page>
+  );
+}
+```

@@ -158,6 +158,53 @@
       "registryDependencies": []
     },
     {
+      "name": "page",
+      "type": "registry:ui",
+      "title": "Page",
+      "description": "A flexible page container with padding",
+      "files": [
+        {
+          "path": "components/ui/layouts/page.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/page.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "fixed-area",
+      "type": "registry:ui",
+      "title": "Fixed Area",
+      "description": "A fixed area container with absolute positioning and centered content",
+      "files": [
+        {
+          "path": "components/ui/layouts/fixed-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/fixed-area.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "image-area",
+      "type": "registry:ui",
+      "title": "Image Area",
+      "description": "A fixed area with a blurred background image effect",
+      "files": [
+        {
+          "path": "components/ui/layouts/image-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/image-area.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "@shoscn/fixed-area"
+      ]
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -165,14 +212,17 @@
       "files": [],
       "dependencies": [],
       "registryDependencies": [
+        "@shoscn/fixed-area",
         "@shoscn/grid",
         "@shoscn/horizontal-box",
-        "@shoscn/vertical-box",
         "@shoscn/iframe",
+        "@shoscn/image-area",
+        "@shoscn/page",
         "@shoscn/searchable-dropdown",
         "@shoscn/spinner",
         "@shoscn/status-indicator",
         "@shoscn/typing-dots",
+        "@shoscn/vertical-box",
         "@shoscn/video-loop"
       ]
     }

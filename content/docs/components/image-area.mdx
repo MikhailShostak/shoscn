@@ -1,0 +1,90 @@
+---
+title: Image Area
+description: A fixed area with a blurred background image effect
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/image-area
+```
+
+This component automatically installs its dependency `@shoscn/fixed-area`.
+
+## Usage
+
+```tsx
+import { ImageArea } from '@/components/ui/layouts/image-area';
+
+export default function MyComponent() {
+  return (
+    <ImageArea src="/background.jpg">
+      <div>Content over blurred background</div>
+    </ImageArea>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display over the blurred background |
+| `src` | `string` | - | URL of the background image |
+| `className` | `string` | - | Additional CSS classes to apply to the FixedArea container |
+
+## How It Works
+
+The component creates a layered effect:
+1. Background layer: Absolutely positioned, scaled (110%), heavily blurred (3xl), and semi-transparent (30%)
+2. Content layer: Uses `FixedArea` to center content with padding
+
+## Features
+
+- Blurred background image effect
+- Scaled background for better edge coverage
+- Centered content overlay
+- Customizable opacity and blur
+
+## Examples
+
+### Basic
+
+```tsx
+import { ImageArea } from '@/components/ui/layouts/image-area';
+
+export default function Hero() {
+  return (
+    <ImageArea src="/hero-background.jpg">
+      <div className="text-center text-white">
+        <h1 className="text-4xl font-bold">Welcome</h1>
+        <p className="text-xl">Beautiful blurred background</p>
+      </div>
+    </ImageArea>
+  );
+}
+```
+
+### With Custom Styling
+
+```tsx
+import { ImageArea } from '@/components/ui/layouts/image-area';
+
+export default function Profile() {
+  return (
+    <ImageArea
+      src="/profile-bg.jpg"
+      className="bg-black/20 backdrop-blur-sm"
+    >
+      <div className="max-w-2xl">
+        <img src="/avatar.jpg" className="rounded-full w-32 h-32 mx-auto" />
+        <h2 className="text-2xl font-bold text-white mt-4">John Doe</h2>
+      </div>
+    </ImageArea>
+  );
+}
+```
+
+## Dependencies
+
+- `@shoscn/fixed-area` - Used for the centered content layer
