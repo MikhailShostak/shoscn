@@ -71,7 +71,7 @@ export function SidebarNav() {
       {navigation.map((section) => (
         <div key={section.title}>
           <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">{section.title}</h4>
-          {'subsections' in section ? (
+          {'subsections' in section && section.subsections ? (
             <div className="space-y-3">
               {section.subsections.map((subsection) => (
                 <div key={subsection.title}>
