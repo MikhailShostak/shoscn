@@ -12,7 +12,7 @@
         {
           "path": "components/ui/utils/status-indicator.tsx",
           "type": "registry:component",
-          "target": "ui/utils"
+          "target": "components/ui/utils/status-indicator.tsx"
         }
       ],
       "dependencies": [],
