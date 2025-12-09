@@ -88,6 +88,31 @@
       "registryDependencies": []
     },
     {
+      "name": "video-loop",
+      "type": "registry:ui",
+      "title": "Video Loop",
+      "description": "A video player that loops through multiple videos with fade transitions",
+      "files": [
+        {
+          "path": "components/ui/media/video-loop.tsx",
+          "type": "registry:component",
+          "target": "components/ui/media/video-loop.tsx"
+        },
+        {
+          "path": "components/hooks/use-video-loop.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-video-loop.ts"
+        },
+        {
+          "path": "components/hooks/use-fade-element.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-fade-element.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -99,7 +124,8 @@
         "@shoscn/searchable-dropdown",
         "@shoscn/spinner",
         "@shoscn/status-indicator",
-        "@shoscn/typing-dots"
+        "@shoscn/typing-dots",
+        "@shoscn/video-loop"
       ]
     }
   ]
