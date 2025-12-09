@@ -3,19 +3,12 @@ title: Searchable Dropdown
 description: A searchable dropdown component with support for groups, subgroups, and custom colors.
 ---
 
-import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
+import { SearchableDropdownBasic, SearchableDropdownWithLabel, SearchableDropdownWithGroups, SearchableDropdownWithSubgroups, SearchableDropdownKeepOpen } from '@/components/examples/searchable-dropdown-examples';
 
 ## Preview
 
 <ComponentPreview
-  preview={
-    <SearchableDropdown
-      value=""
-      onChange={() => {}}
-      options={['Apple', 'Banana', 'Orange', 'Mango', 'Grape']}
-      placeholder="Select a fruit..."
-    />
-  }
+  preview={<SearchableDropdownBasic />}
   code={`import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 
 export default function Example() {
@@ -62,15 +55,7 @@ export default function MyComponent() {
 ### With Label
 
 <ComponentPreview
-  preview={
-    <SearchableDropdown
-      label="Favorite Fruit"
-      value=""
-      onChange={() => {}}
-      options={['Apple', 'Banana', 'Orange']}
-      placeholder="Select..."
-    />
-  }
+  preview={<SearchableDropdownWithLabel />}
   code={`<SearchableDropdown
   label="Favorite Fruit"
   value={value}
@@ -83,23 +68,7 @@ export default function MyComponent() {
 ### With Groups
 
 <ComponentPreview
-  preview={
-    <SearchableDropdown
-      value=""
-      onChange={() => {}}
-      groups={[
-        {
-          label: 'Fruits',
-          options: ['Apple', 'Banana', 'Orange'],
-        },
-        {
-          label: 'Vegetables',
-          options: ['Carrot', 'Broccoli', 'Spinach'],
-        },
-      ]}
-      placeholder="Select..."
-    />
-  }
+  preview={<SearchableDropdownWithGroups />}
   code={`<SearchableDropdown
   value={value}
   onChange={setValue}
@@ -120,29 +89,7 @@ export default function MyComponent() {
 ### With Subgroups
 
 <ComponentPreview
-  preview={
-    <SearchableDropdown
-      value=""
-      onChange={() => {}}
-      groups={[
-        {
-          label: 'Food',
-          options: [],
-          subgroups: [
-            {
-              label: 'Fruits',
-              options: ['Apple', 'Banana', 'Orange'],
-            },
-            {
-              label: 'Vegetables',
-              options: ['Carrot', 'Broccoli', 'Spinach'],
-            },
-          ],
-        },
-      ]}
-      placeholder="Select..."
-    />
-  }
+  preview={<SearchableDropdownWithSubgroups />}
   code={`<SearchableDropdown
   value={value}
   onChange={setValue}
@@ -169,15 +116,7 @@ export default function MyComponent() {
 ### Keep Open On Select
 
 <ComponentPreview
-  preview={
-    <SearchableDropdown
-      value=""
-      onChange={() => {}}
-      options={['Apple', 'Banana', 'Orange']}
-      placeholder="Select..."
-      keepOpenOnSelect
-    />
-  }
+  preview={<SearchableDropdownKeepOpen />}
   code={`<SearchableDropdown
   value={value}
   onChange={setValue}
