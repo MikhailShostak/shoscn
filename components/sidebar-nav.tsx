@@ -14,13 +14,33 @@ const navigation = [
   },
   {
     title: 'Components',
-    items: [
-      { title: 'IFrame', href: '/components/iframe' },
-      { title: 'Searchable Dropdown', href: '/components/searchable-dropdown' },
-      { title: 'Spinner', href: '/components/spinner' },
-      { title: 'Status Indicator', href: '/components/status-indicator' },
-      { title: 'Typing Dots', href: '/components/typing-dots' },
-      { title: 'Video Loop', href: '/components/video-loop' },
+    subsections: [
+      {
+        title: 'Chat',
+        items: [
+          { title: 'Typing Dots', href: '/components/typing-dots' },
+        ],
+      },
+      {
+        title: 'Input',
+        items: [
+          { title: 'Searchable Dropdown', href: '/components/searchable-dropdown' },
+        ],
+      },
+      {
+        title: 'Media',
+        items: [
+          { title: 'Video Loop', href: '/components/video-loop' },
+        ],
+      },
+      {
+        title: 'Utils',
+        items: [
+          { title: 'IFrame', href: '/components/iframe' },
+          { title: 'Spinner', href: '/components/spinner' },
+          { title: 'Status Indicator', href: '/components/status-indicator' },
+        ],
+      },
     ],
   },
   {
@@ -40,22 +60,48 @@ export function SidebarNav() {
       {navigation.map((section) => (
         <div key={section.title}>
           <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">{section.title}</h4>
-          <div className="grid grid-flow-row auto-rows-max text-sm">
-            {section.items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline',
-                  pathname === item.href
-                    ? 'font-medium text-foreground'
-                    : 'text-muted-foreground'
-                )}
-              >
-                {item.title}
-              </Link>
-            ))}
-          </div>
+          {'subsections' in section ? (
+            <div className="space-y-3">
+              {section.subsections.map((subsection) => (
+                <div key={subsection.title}>
+                  <h5 className="mb-1 rounded-md px-2 py-1 text-xs font-medium text-muted-foreground">{subsection.title}</h5>
+                  <div className="grid grid-flow-row auto-rows-max text-sm">
+                    {subsection.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={cn(
+                          'group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline',
+                          pathname === item.href
+                            ? 'font-medium text-foreground'
+                            : 'text-muted-foreground'
+                        )}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-flow-row auto-rows-max text-sm">
+              {section.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline',
+                    pathname === item.href
+                      ? 'font-medium text-foreground'
+                      : 'text-muted-foreground'
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </aside>
