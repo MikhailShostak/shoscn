@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, RefObject } from 'react';
 
 export function useFadeElement(elementRef: RefObject<HTMLElement | null>, duration: number = 300, onTransitionComplete?: () => void | Promise<void>) {
   const [opacity, setOpacity] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const fadeIn = useCallback(() => {
     setOpacity(1);
