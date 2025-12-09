@@ -1,11 +1,18 @@
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
+import IFrame from '@/components/ui/utils/iframe';
 import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
+  {
+    name: 'IFrame',
+    slug: 'iframe',
+    description: 'A flexible iframe component with support for URL or port-based sources',
+    preview: <div className="w-32 h-20 border rounded"><IFrame title="Preview" url="about:blank" /></div>,
+  },
   {
     name: 'Searchable Dropdown',
     slug: 'searchable-dropdown',

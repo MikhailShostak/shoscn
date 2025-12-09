@@ -1,0 +1,32 @@
+'use client';
+
+export interface IFrameProps {
+  url?: string;
+  port?: number;
+  title: string;
+}
+
+export const IFrame = ({ url, port, title }: IFrameProps) => {
+  const src = url || (port ? `${window.location.protocol}//${window.location.hostname}:${port}` : '');
+
+  return (
+    <div className='h-full w-full'>
+      <iframe
+        src={src}
+        width='100%'
+        height='100%'
+        className='border-0'
+        title={title}
+        allow="clipboard-read; clipboard-write"
+      />
+    </div>
+  );
+};
+
+export const createIFrameRoute = (title: string, port: number) => {
+  const Component = () => <IFrame title={title} port={port} />;
+  Component.displayName = `IFrameRoute(${title})`;
+  return Component;
+};
+
+export default IFrame;

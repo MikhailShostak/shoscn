@@ -41,6 +41,21 @@
       ]
     },
     {
+      "name": "iframe",
+      "type": "registry:ui",
+      "title": "IFrame",
+      "description": "A flexible iframe component with support for URL or port-based sources",
+      "files": [
+        {
+          "path": "components/ui/utils/iframe.tsx",
+          "type": "registry:component",
+          "target": "components/ui/utils/iframe.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -48,8 +63,9 @@
       "files": [],
       "dependencies": [],
       "registryDependencies": [
-        "@shoscn/status-indicator",
-        "@shoscn/searchable-dropdown"
+        "@shoscn/iframe",
+        "@shoscn/searchable-dropdown",
+        "@shoscn/status-indicator"
       ]
     }
   ]

@@ -1,0 +1,99 @@
+---
+title: IFrame
+description: A flexible iframe component with support for URL or port-based sources.
+---
+
+import IFrame from '@/components/ui/utils/iframe';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <div className="w-full h-64 border rounded">
+      <IFrame title="Example" url="about:blank" />
+    </div>
+  }
+  code={`import IFrame from '@/components/ui/utils/iframe';
+
+export default function Example() {
+  return (
+    <div className="w-full h-64">
+      <IFrame title="Example" url="https://example.com" />
+    </div>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/iframe
+```
+
+## Usage
+
+```tsx
+import IFrame from '@/components/ui/utils/iframe';
+
+export default function MyComponent() {
+  return (
+    <div className="w-full h-screen">
+      <IFrame title="My App" url="https://example.com" />
+    </div>
+  );
+}
+```
+
+## Examples
+
+### With URL
+
+<ComponentPreview
+  preview={
+    <div className="w-full h-64 border rounded">
+      <IFrame title="With URL" url="about:blank" />
+    </div>
+  }
+  code={`<IFrame title="External Site" url="https://example.com" />`}
+/>
+
+### With Port
+
+Use the port prop to connect to a local development server running on a specific port.
+
+<ComponentPreview
+  preview={
+    <div className="w-full h-64 border rounded">
+      <IFrame title="Local Server" port={3000} />
+    </div>
+  }
+  code={`<IFrame title="Local Server" port={3000} />`}
+/>
+
+### Helper Function
+
+The component also exports a `createIFrameRoute` helper function for creating route components.
+
+```tsx
+import { createIFrameRoute } from '@/components/ui/utils/iframe';
+
+// Create a route component for a local server
+const MyServerRoute = createIFrameRoute('My Server', 3000);
+
+export default MyServerRoute;
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | - | Required title for the iframe (for accessibility) |
+| `url` | `string` | - | URL to load in the iframe |
+| `port` | `number` | - | Local port number (constructs URL from current hostname) |
+
+## Notes
+
+- Either `url` or `port` should be provided
+- If `port` is used, the iframe will load from the current hostname on that port
+- The iframe includes `clipboard-read` and `clipboard-write` permissions
+- The component fills its parent container (100% width and height)
