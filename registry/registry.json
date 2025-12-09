@@ -73,6 +73,21 @@
       "registryDependencies": []
     },
     {
+      "name": "typing-dots",
+      "type": "registry:ui",
+      "title": "Typing Dots",
+      "description": "An animated typing indicator with customizable size and color variants",
+      "files": [
+        {
+          "path": "components/ui/chat/typing-dots.tsx",
+          "type": "registry:component",
+          "target": "components/ui/chat/typing-dots.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -83,7 +98,8 @@
         "@shoscn/iframe",
         "@shoscn/searchable-dropdown",
         "@shoscn/spinner",
-        "@shoscn/status-indicator"
+        "@shoscn/status-indicator",
+        "@shoscn/typing-dots"
       ]
     }
   ]
