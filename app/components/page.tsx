@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { TypingDots } from '@/components/ui/chat/typing-dots';
+import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 import { FixedArea } from '@/components/ui/layouts/fixed-area';
 import { Grid } from '@/components/ui/layouts/grid';
 import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
@@ -8,11 +13,8 @@ import { ImageArea } from '@/components/ui/layouts/image-area';
 import { Page } from '@/components/ui/layouts/page';
 import { VerticalBox } from '@/components/ui/layouts/vertical-box';
 import IFrame from '@/components/ui/utils/iframe';
-import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 import { Spinner } from '@/components/ui/utils/spinner';
 import { StatusIndicator } from '@/components/ui/utils/status-indicator';
-import { TypingDots } from '@/components/ui/chat/typing-dots';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
   {
