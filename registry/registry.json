@@ -11,11 +11,23 @@
       "files": [
         {
           "path": "components/ui/utils/status-indicator.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "ui/utils"
         }
       ],
       "dependencies": [],
       "registryDependencies": []
+    },
+    {
+      "name": "all",
+      "type": "registry:ui",
+      "title": "All Components",
+      "description": "Install all components from the registry",
+      "files": [],
+      "dependencies": [],
+      "registryDependencies": [
+        "status-indicator"
+      ]
     }
   ]
 }

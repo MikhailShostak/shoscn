@@ -16,8 +16,8 @@ export default function Home() {
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">Quick Start</h2>
-          <p>Install components from this registry using the shadcn CLI:</p>
-          <CodeBlock code="npx shadcn@latest add https://mikhailshostak.github.io/shoscn/r/status-indicator.json" />
+          <p>Install all components from this registry using the shadcn CLI:</p>
+          <CodeBlock code="npx shadcn@latest add @shoscn/all" />
         </section>
 
         <section className="space-y-4">
