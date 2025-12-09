@@ -56,6 +56,23 @@
       "registryDependencies": []
     },
     {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "A loading spinner component",
+      "files": [
+        {
+          "path": "components/ui/utils/spinner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/utils/spinner.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -65,6 +82,7 @@
       "registryDependencies": [
         "@shoscn/iframe",
         "@shoscn/searchable-dropdown",
+        "@shoscn/spinner",
         "@shoscn/status-indicator"
       ]
     }
