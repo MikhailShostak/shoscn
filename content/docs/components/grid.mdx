@@ -1,0 +1,62 @@
+---
+title: Grid
+description: A responsive grid layout component
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/grid
+```
+
+## Usage
+
+```tsx
+import { Grid } from '@/components/ui/layouts/grid';
+
+export default function MyComponent() {
+  return (
+    <Grid>
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </Grid>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display in the grid |
+
+## Responsive Breakpoints
+
+The grid automatically adjusts columns based on screen size:
+
+- Mobile (default): 1 column
+- Small (sm): 2 columns
+- Medium (md): 3 columns
+- Large (lg): 4 columns
+- Extra Large (xl): 5 columns
+- 2X Large (2xl): 6 columns
+
+## Example
+
+```tsx
+import { Grid } from '@/components/ui/layouts/grid';
+import { Card } from '@/components/ui/card';
+
+export default function Gallery() {
+  return (
+    <Grid>
+      {items.map((item) => (
+        <Card key={item.id}>
+          {item.content}
+        </Card>
+      ))}
+    </Grid>
+  );
+}
+```

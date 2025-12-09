@@ -28,6 +28,14 @@ const navigation = [
         ],
       },
       {
+        title: 'Layouts',
+        items: [
+          { title: 'Grid', href: '/components/grid' },
+          { title: 'Horizontal Box', href: '/components/horizontal-box' },
+          { title: 'Vertical Box', href: '/components/vertical-box' },
+        ],
+      },
+      {
         title: 'Media',
         items: [
           { title: 'Video Loop', href: '/components/video-loop' },

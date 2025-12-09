@@ -113,6 +113,51 @@
       "registryDependencies": []
     },
     {
+      "name": "grid",
+      "type": "registry:ui",
+      "title": "Grid",
+      "description": "A responsive grid layout component",
+      "files": [
+        {
+          "path": "components/ui/layouts/grid.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/grid.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "horizontal-box",
+      "type": "registry:ui",
+      "title": "Horizontal Box",
+      "description": "A horizontal flexbox layout component with optional reverse direction",
+      "files": [
+        {
+          "path": "components/ui/layouts/horizontal-box.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/horizontal-box.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "vertical-box",
+      "type": "registry:ui",
+      "title": "Vertical Box",
+      "description": "A vertical flexbox layout component with optional reverse direction",
+      "files": [
+        {
+          "path": "components/ui/layouts/vertical-box.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/vertical-box.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -120,6 +165,9 @@
       "files": [],
       "dependencies": [],
       "registryDependencies": [
+        "@shoscn/grid",
+        "@shoscn/horizontal-box",
+        "@shoscn/vertical-box",
         "@shoscn/iframe",
         "@shoscn/searchable-dropdown",
         "@shoscn/spinner",

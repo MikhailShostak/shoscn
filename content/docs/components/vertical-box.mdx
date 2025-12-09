@@ -1,0 +1,66 @@
+---
+title: Vertical Box
+description: A vertical flexbox layout component with optional reverse direction
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/vertical-box
+```
+
+## Usage
+
+```tsx
+import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export default function MyComponent() {
+  return (
+    <VerticalBox>
+      <div>Top</div>
+      <div>Bottom</div>
+    </VerticalBox>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display in the vertical layout |
+| `reversed` | `boolean` | `false` | Reverse the order of children (bottom to top) |
+
+## Examples
+
+### Basic
+
+```tsx
+import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export default function Example() {
+  return (
+    <VerticalBox>
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
+    </VerticalBox>
+  );
+}
+```
+
+### Reversed
+
+```tsx
+import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export default function Example() {
+  return (
+    <VerticalBox reversed>
+      <div>First (appears at bottom)</div>
+      <div>Second (appears in middle)</div>
+      <div>Third (appears at top)</div>
+    </VerticalBox>
+  );
+}
+```

@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
+import { Grid } from '@/components/ui/layouts/grid';
+import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+import { VerticalBox } from '@/components/ui/layouts/vertical-box';
 import IFrame from '@/components/ui/utils/iframe';
 import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 import { Spinner } from '@/components/ui/utils/spinner';
@@ -9,6 +12,40 @@ import { TypingDots } from '@/components/ui/chat/typing-dots';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
+  {
+    name: 'Grid',
+    slug: 'grid',
+    description: 'A responsive grid layout component',
+    preview: (
+      <Grid>
+        <div className="w-4 h-4 bg-primary rounded" />
+        <div className="w-4 h-4 bg-primary rounded" />
+        <div className="w-4 h-4 bg-primary rounded" />
+      </Grid>
+    ),
+  },
+  {
+    name: 'Horizontal Box',
+    slug: 'horizontal-box',
+    description: 'A horizontal flexbox layout component with optional reverse direction',
+    preview: (
+      <HorizontalBox>
+        <div className="w-6 h-6 bg-primary rounded" />
+        <div className="w-6 h-6 bg-primary rounded" />
+      </HorizontalBox>
+    ),
+  },
+  {
+    name: 'Vertical Box',
+    slug: 'vertical-box',
+    description: 'A vertical flexbox layout component with optional reverse direction',
+    preview: (
+      <VerticalBox>
+        <div className="w-6 h-6 bg-primary rounded" />
+        <div className="w-6 h-6 bg-primary rounded" />
+      </VerticalBox>
+    ),
+  },
   {
     name: 'IFrame',
     slug: 'iframe',

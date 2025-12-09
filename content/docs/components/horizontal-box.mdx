@@ -1,0 +1,66 @@
+---
+title: Horizontal Box
+description: A horizontal flexbox layout component with optional reverse direction
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/horizontal-box
+```
+
+## Usage
+
+```tsx
+import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+
+export default function MyComponent() {
+  return (
+    <HorizontalBox>
+      <div>Left</div>
+      <div>Right</div>
+    </HorizontalBox>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display in the horizontal layout |
+| `reversed` | `boolean` | `false` | Reverse the order of children (right to left) |
+
+## Examples
+
+### Basic
+
+```tsx
+import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+
+export default function Example() {
+  return (
+    <HorizontalBox>
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
+    </HorizontalBox>
+  );
+}
+```
+
+### Reversed
+
+```tsx
+import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
+
+export default function Example() {
+  return (
+    <HorizontalBox reversed>
+      <div>First (appears on right)</div>
+      <div>Second (appears in middle)</div>
+      <div>Third (appears on left)</div>
+    </HorizontalBox>
+  );
+}
+```
