@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
-import { StatusIndicator } from '@/components/status-indicator/status-indicator';
+import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
