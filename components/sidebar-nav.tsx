@@ -23,6 +23,13 @@ const navigation = [
       { title: 'Video Loop', href: '/components/video-loop' },
     ],
   },
+  {
+    title: 'Hooks',
+    items: [
+      { title: 'useFadeElement', href: '/hooks/use-fade-element' },
+      { title: 'useVideoLoop', href: '/hooks/use-video-loop' },
+    ],
+  },
 ];
 
 export function SidebarNav() {

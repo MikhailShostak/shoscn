@@ -1,0 +1,139 @@
+---
+title: useFadeElement
+description: A hook for creating fade in/out transitions on DOM elements.
+---
+
+## Installation
+
+This hook is included when you install the video-loop component:
+
+```bash
+npx shadcn@latest add @shoscn/video-loop
+```
+
+## Usage
+
+```tsx
+import { useRef } from 'react';
+import { useFadeElement } from '@/components/hooks/use-fade-element';
+
+export default function MyComponent() {
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  const { fadeIn, fadeOut, fadeTransition } = useFadeElement(
+    elementRef,
+    500,
+    async () => {
+      console.log('Transition complete!');
+    }
+  );
+
+  return (
+    <div>
+      <div ref={elementRef}>Content to fade</div>
+      <button onClick={fadeIn}>Fade In</button>
+      <button onClick={fadeOut}>Fade Out</button>
+      <button onClick={fadeTransition}>Fade Transition</button>
+    </div>
+  );
+}
+```
+
+## Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `elementRef` | `RefObject<HTMLElement>` | Yes | - | Ref to the element to fade |
+| `duration` | `number` | No | `300` | Fade duration in milliseconds |
+| `onTransitionComplete` | `() => void \| Promise<void>` | No | - | Callback executed during fade transition |
+
+## Return Value
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `fadeIn` | `() => void` | Function to fade in the element (opacity 0 → 1) |
+| `fadeOut` | `() => void` | Function to fade out the element (opacity 1 → 0) |
+| `fadeTransition` | `() => void` | Function to fade out, execute callback, then fade in |
+
+## How It Works
+
+1. The hook manages opacity state and applies CSS transitions to the element
+2. `fadeIn()` sets opacity to 1
+3. `fadeOut()` sets opacity to 0
+4. `fadeTransition()` performs a complete fade cycle:
+   - Fades out (opacity → 0)
+   - Waits for the duration
+   - Executes the `onTransitionComplete` callback
+   - Fades back in (opacity → 1)
+5. The element automatically fades in when the hook initializes
+
+## Example with Content Swap
+
+```tsx
+import { useRef, useState } from 'react';
+import { useFadeElement } from '@/components/hooks/use-fade-element';
+
+export default function ContentSwapper() {
+  const [content, setContent] = useState('Initial Content');
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  const handleSwap = async () => {
+    setContent('New Content');
+  };
+
+  const { fadeTransition } = useFadeElement(
+    elementRef,
+    300,
+    handleSwap
+  );
+
+  return (
+    <div>
+      <div ref={elementRef} className="p-4 border rounded">
+        {content}
+      </div>
+      <button onClick={fadeTransition}>
+        Swap Content
+      </button>
+    </div>
+  );
+}
+```
+
+## Example with Image Gallery
+
+```tsx
+import { useRef, useState } from 'react';
+import { useFadeElement } from '@/components/hooks/use-fade-element';
+
+export default function ImageGallery() {
+  const [index, setIndex] = useState(0);
+  const images = ['/img1.jpg', '/img2.jpg', '/img3.jpg'];
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const nextImage = async () => {
+    setIndex((i) => (i + 1) % images.length);
+  };
+
+  const { fadeTransition } = useFadeElement(imgRef, 500, nextImage);
+
+  return (
+    <div>
+      <img
+        ref={imgRef}
+        src={images[index]}
+        alt="Gallery"
+        className="w-full rounded-lg"
+      />
+      <button onClick={fadeTransition}>Next Image</button>
+    </div>
+  );
+}
+```
+
+## Notes
+
+- The element's `transition` CSS property is automatically managed
+- The element fades in automatically when the component mounts
+- Transitions use CSS opacity changes for smooth performance
+- The callback in `fadeTransition` can be async

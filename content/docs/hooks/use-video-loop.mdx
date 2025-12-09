@@ -1,0 +1,97 @@
+---
+title: useVideoLoop
+description: A hook for managing video playback loops with fade transitions.
+---
+
+## Installation
+
+This hook is included when you install the video-loop component:
+
+```bash
+npx shadcn@latest add @shoscn/video-loop
+```
+
+## Usage
+
+```tsx
+import { useRef } from 'react';
+import { useVideoLoop } from '@/components/hooks/use-video-loop';
+
+export default function MyComponent() {
+  const videos = [
+    '/video1.mp4',
+    '/video2.mp4',
+    '/video3.mp4',
+  ];
+
+  const { videoRef, currentIndex, currentRepeat, currentVideo } = useVideoLoop(
+    videos,
+    2
+  );
+
+  return (
+    <div>
+      <video ref={videoRef} />
+      <p>Playing video {currentIndex + 1} of {videos.length}</p>
+      <p>Repeat {currentRepeat + 1} of 2</p>
+    </div>
+  );
+}
+```
+
+## Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `videos` | `string[]` | Yes | Array of video URLs to loop through |
+| `repeatCount` | `number` | Yes | Number of times each video should repeat |
+
+## Return Value
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `videoRef` | `RefObject<HTMLVideoElement>` | Ref to attach to the video element |
+| `currentIndex` | `number` | Index of the currently playing video |
+| `currentRepeat` | `number` | Current repeat count (0-indexed) |
+| `currentVideo` | `string` | URL of the currently playing video |
+
+## How It Works
+
+1. The hook manages video playback state and automatically handles video transitions
+2. Each video plays `repeatCount` times before moving to the next
+3. Uses the `useFadeElement` hook to create smooth transitions between videos
+4. Automatically loops back to the first video after the last one finishes
+5. The video element referenced by `videoRef` will autoplay when the source changes
+
+## Dependencies
+
+This hook depends on:
+- `useFadeElement` - for fade transitions between videos
+
+## Example with Custom Controls
+
+```tsx
+import { useVideoLoop } from '@/components/hooks/use-video-loop';
+
+export default function CustomVideoPlayer() {
+  const videos = ['/video1.mp4', '/video2.mp4'];
+  const { videoRef, currentIndex, currentRepeat, currentVideo } = useVideoLoop(
+    videos,
+    3
+  );
+
+  return (
+    <div className="space-y-4">
+      <video
+        ref={videoRef}
+        className="w-full rounded-lg"
+      />
+      <div className="text-sm text-muted-foreground">
+        <p>Video: {currentIndex + 1}/{videos.length}</p>
+        <p>Repeat: {currentRepeat + 1}/3</p>
+        <p className="truncate">Source: {currentVideo}</p>
+      </div>
+    </div>
+  );
+}
+```
