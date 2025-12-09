@@ -1,13 +1,13 @@
 'use client';
 
-export interface IFrameProps {
+interface IFrameProps {
   url?: string;
   port?: number;
   title: string;
 }
 
-export const IFrame = ({ url, port, title }: IFrameProps) => {
-  const src = url || (port ? `${window.location.protocol}//${window.location.hostname}:${port}` : '');
+export default function IFrame({ url, port, title }: IFrameProps) {
+  const src = url || (port && typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:${port}` : '');
 
   return (
     <div className='h-full w-full'>
@@ -21,12 +21,10 @@ export const IFrame = ({ url, port, title }: IFrameProps) => {
       />
     </div>
   );
-};
+}
 
 export const createIFrameRoute = (title: string, port: number) => {
   const Component = () => <IFrame title={title} port={port} />;
   Component.displayName = `IFrameRoute(${title})`;
   return Component;
 };
-
-export default IFrame;

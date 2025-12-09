@@ -7,7 +7,7 @@ interface IFrameProps {
 }
 
 export default function IFrame({ url, port, title }: IFrameProps) {
-  const src = url || (port ? `${window.location.protocol}//${window.location.hostname}:${port}` : '');
+  const src = url || (port && typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:${port}` : '');
 
   return (
     <div className='h-full w-full'>
