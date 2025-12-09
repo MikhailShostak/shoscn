@@ -1,0 +1,96 @@
+---
+title: Spinner
+description: A loading spinner component using Lucide's Loader2 icon.
+---
+
+import { Spinner } from '@/components/ui/utils/spinner';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <Spinner />
+  }
+  code={`import { Spinner } from '@/components/ui/utils/spinner';
+
+export default function Example() {
+  return <Spinner />;
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/spinner
+```
+
+## Usage
+
+```tsx
+import { Spinner } from '@/components/ui/utils/spinner';
+
+export default function MyComponent() {
+  return <Spinner />;
+}
+```
+
+## Examples
+
+### Custom Size
+
+<ComponentPreview
+  preview={
+    <div className="flex items-center gap-4">
+      <Spinner className="size-4" />
+      <Spinner className="size-6" />
+      <Spinner className="size-8" />
+      <Spinner className="size-12" />
+    </div>
+  }
+  code={`<Spinner className="size-4" />
+<Spinner className="size-6" />
+<Spinner className="size-8" />
+<Spinner className="size-12" />`}
+/>
+
+### Custom Color
+
+<ComponentPreview
+  preview={
+    <div className="flex items-center gap-4">
+      <Spinner className="text-primary" />
+      <Spinner className="text-destructive" />
+      <Spinner className="text-green-500" />
+    </div>
+  }
+  code={`<Spinner className="text-primary" />
+<Spinner className="text-destructive" />
+<Spinner className="text-green-500" />`}
+/>
+
+### In Button
+
+<ComponentPreview
+  preview={
+    <button className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md" disabled>
+      <Spinner />
+      Loading...
+    </button>
+  }
+  code={`<button className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md" disabled>
+  <Spinner />
+  Loading...
+</button>`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `className` | `string` | - | Additional CSS classes for custom styling |
+| All SVG props | - | - | Accepts all standard SVG element props |
+
+## Accessibility
+
+- The spinner includes `role="status"` for screen readers
+- Includes `aria-label="Loading"` to describe the loading state

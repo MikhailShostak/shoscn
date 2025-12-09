@@ -1,0 +1,189 @@
+---
+title: Video Loop
+description: A video player that loops through multiple videos with fade transitions.
+---
+
+import { VideoLoop } from '@/components/ui/media/video-loop';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <div className="w-full max-w-md h-64 border rounded-lg overflow-hidden">
+      <VideoLoop
+        videos={[
+          '/placeholder-video-1.mp4',
+          '/placeholder-video-2.mp4'
+        ]}
+        repeatCount={2}
+      />
+    </div>
+  }
+  code={`import { VideoLoop } from '@/components/ui/media/video-loop';
+
+export default function Example() {
+  return (
+    <div className="w-full max-w-md h-64">
+      <VideoLoop
+        videos={[
+          '/video-1.mp4',
+          '/video-2.mp4'
+        ]}
+        repeatCount={2}
+      />
+    </div>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/video-loop
+```
+
+This component includes:
+- `VideoLoop` component
+- `useVideoLoop` hook
+- `useFadeElement` hook
+
+## Usage
+
+```tsx
+import { VideoLoop } from '@/components/ui/media/video-loop';
+
+export default function MyComponent() {
+  const videos = [
+    '/path/to/video1.mp4',
+    '/path/to/video2.mp4',
+    '/path/to/video3.mp4',
+  ];
+
+  return (
+    <div className="w-full h-screen">
+      <VideoLoop videos={videos} repeatCount={3} />
+    </div>
+  );
+}
+```
+
+## Examples
+
+### With Debug Info
+
+<ComponentPreview
+  preview={
+    <div className="w-full max-w-md h-64 border rounded-lg overflow-hidden">
+      <VideoLoop
+        videos={[
+          '/placeholder-video-1.mp4',
+          '/placeholder-video-2.mp4'
+        ]}
+        repeatCount={2}
+        showDebug
+      />
+    </div>
+  }
+  code={`<VideoLoop
+  videos={videos}
+  repeatCount={2}
+  showDebug
+/>`}
+/>
+
+### Custom Styling
+
+<ComponentPreview
+  preview={
+    <div className="w-full max-w-md h-64 border rounded-lg overflow-hidden">
+      <VideoLoop
+        videos={[
+          '/placeholder-video-1.mp4',
+          '/placeholder-video-2.mp4'
+        ]}
+        repeatCount={2}
+        className="border-4 border-primary"
+      />
+    </div>
+  }
+  code={`<VideoLoop
+  videos={videos}
+  repeatCount={2}
+  className="border-4 border-primary"
+/>`}
+/>
+
+## API Reference
+
+### VideoLoop Component
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `videos` | `string[]` | - | Required. Array of video URLs to loop through |
+| `repeatCount` | `number` | `2` | Number of times each video should repeat before moving to next |
+| `className` | `string` | - | Additional CSS classes for the video element |
+| `showDebug` | `boolean` | `false` | Show debug information overlay |
+
+### useVideoLoop Hook
+
+```tsx
+import { useVideoLoop } from '@/components/hooks/use-video-loop';
+
+function MyComponent() {
+  const { videoRef, currentIndex, currentRepeat, currentVideo } = useVideoLoop(
+    videos,
+    repeatCount
+  );
+
+  return <video ref={videoRef} />;
+}
+```
+
+**Returns:**
+- `videoRef`: Ref object for the video element
+- `currentIndex`: Index of the current video in the array
+- `currentRepeat`: Current repeat count for the video
+- `currentVideo`: URL of the current video
+
+### useFadeElement Hook
+
+```tsx
+import { useFadeElement } from '@/components/hooks/use-fade-element';
+
+function MyComponent() {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const { fadeIn, fadeOut, fadeTransition } = useFadeElement(
+    elementRef,
+    300,
+    onTransitionComplete
+  );
+
+  return <div ref={elementRef}>Content</div>;
+}
+```
+
+**Parameters:**
+- `elementRef`: Ref object for the element to fade
+- `duration`: Fade duration in milliseconds (default: 300)
+- `onTransitionComplete`: Optional callback after fade transition
+
+**Returns:**
+- `fadeIn`: Function to fade in the element
+- `fadeOut`: Function to fade out the element
+- `fadeTransition`: Function to fade out, execute callback, then fade in
+
+## How It Works
+
+1. Each video plays and repeats `repeatCount` times
+2. After all repeats, the component fades out
+3. The next video in the array loads
+4. The component fades back in
+5. Process repeats for all videos in the array
+6. After the last video, loops back to the first video
+
+## Notes
+
+- Videos autoplay when loaded
+- Fade transition duration is 300ms
+- The component fills its parent container (100% width and height)
+- Debug mode shows current repeat count and clickable video URLs

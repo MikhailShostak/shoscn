@@ -1,0 +1,139 @@
+---
+title: Typing Dots
+description: An animated typing indicator with customizable size and color variants.
+---
+
+import { TypingDots } from '@/components/ui/chat/typing-dots';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <TypingDots />
+  }
+  code={`import { TypingDots } from '@/components/ui/chat/typing-dots';
+
+export default function Example() {
+  return <TypingDots />;
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/typing-dots
+```
+
+## Usage
+
+```tsx
+import { TypingDots } from '@/components/ui/chat/typing-dots';
+
+export default function MyComponent() {
+  return <TypingDots />;
+}
+```
+
+## Examples
+
+### Sizes
+
+<ComponentPreview
+  preview={
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-2">
+        <TypingDots size="sm" />
+        <span className="text-sm text-muted-foreground">Small</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <TypingDots size="md" />
+        <span className="text-sm text-muted-foreground">Medium</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <TypingDots size="lg" />
+        <span className="text-sm text-muted-foreground">Large</span>
+      </div>
+    </div>
+  }
+  code={`<TypingDots size="sm" />
+<TypingDots size="md" />
+<TypingDots size="lg" />`}
+/>
+
+### Variants
+
+<ComponentPreview
+  preview={
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-2">
+        <TypingDots variant="primary" />
+        <span className="text-sm">Primary</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <TypingDots variant="secondary" />
+        <span className="text-sm">Secondary</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <TypingDots variant="destructive" />
+        <span className="text-sm">Destructive</span>
+      </div>
+    </div>
+  }
+  code={`<TypingDots variant="primary" />
+<TypingDots variant="secondary" />
+<TypingDots variant="destructive" />`}
+/>
+
+### In Chat Message
+
+<ComponentPreview
+  preview={
+    <div className="flex items-start gap-3 p-4 bg-muted rounded-lg max-w-md">
+      <div className="size-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+        <span className="text-sm font-medium">AI</span>
+      </div>
+      <div className="flex-1 pt-1">
+        <TypingDots />
+      </div>
+    </div>
+  }
+  code={`<div className="flex items-start gap-3 p-4 bg-muted rounded-lg max-w-md">
+  <div className="size-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+    <span className="text-sm font-medium">AI</span>
+  </div>
+  <div className="flex-1 pt-1">
+    <TypingDots />
+  </div>
+</div>`}
+/>
+
+### Custom Color with className
+
+<ComponentPreview
+  preview={
+    <div className="flex items-center gap-4">
+      <TypingDots className="text-blue-500" />
+      <TypingDots className="text-green-500" />
+      <TypingDots className="text-amber-500" />
+    </div>
+  }
+  code={`<TypingDots className="text-blue-500" />
+<TypingDots className="text-green-500" />
+<TypingDots className="text-amber-500" />`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the dots |
+| `variant` | `'primary' \| 'secondary' \| 'destructive'` | - | Color variant (uses current color if not specified) |
+| `className` | `string` | - | Additional CSS classes |
+
+## Animation
+
+The component uses CSS animations with staggered delays:
+- First dot: 0ms delay
+- Second dot: 150ms delay
+- Third dot: 300ms delay
+- Animation duration: 1000ms (1 second)

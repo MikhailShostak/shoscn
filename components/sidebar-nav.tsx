@@ -17,7 +17,10 @@ const navigation = [
     items: [
       { title: 'IFrame', href: '/components/iframe' },
       { title: 'Searchable Dropdown', href: '/components/searchable-dropdown' },
+      { title: 'Spinner', href: '/components/spinner' },
       { title: 'Status Indicator', href: '/components/status-indicator' },
+      { title: 'Typing Dots', href: '/components/typing-dots' },
+      { title: 'Video Loop', href: '/components/video-loop' },
     ],
   },
 ];

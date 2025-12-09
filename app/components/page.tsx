@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { DocsLayout } from '@/components/docs-layout';
 import IFrame from '@/components/ui/utils/iframe';
 import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
+import { Spinner } from '@/components/ui/utils/spinner';
 import { StatusIndicator } from '@/components/ui/utils/status-indicator';
+import { TypingDots } from '@/components/ui/chat/typing-dots';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
@@ -20,10 +22,28 @@ const components = [
     preview: <SearchableDropdown value="" onChange={() => {}} options={['Option 1', 'Option 2', 'Option 3']} placeholder="Select..." />,
   },
   {
+    name: 'Spinner',
+    slug: 'spinner',
+    description: 'A loading spinner component',
+    preview: <Spinner />,
+  },
+  {
     name: 'Status Indicator',
     slug: 'status-indicator',
     description: 'An animated status indicator with multiple color variants',
     preview: <StatusIndicator variant="success" />,
+  },
+  {
+    name: 'Typing Dots',
+    slug: 'typing-dots',
+    description: 'An animated typing indicator with customizable size and color variants',
+    preview: <TypingDots />,
+  },
+  {
+    name: 'Video Loop',
+    slug: 'video-loop',
+    description: 'A video player that loops through multiple videos with fade transitions',
+    preview: <div className="w-32 h-20 border rounded bg-muted flex items-center justify-center text-xs text-muted-foreground">Video Loop</div>,
   },
 ];
 
