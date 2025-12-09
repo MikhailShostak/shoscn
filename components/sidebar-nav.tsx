@@ -15,6 +15,7 @@ const navigation = [
   {
     title: 'Components',
     items: [
+      { title: 'Searchable Dropdown', href: '/components/searchable-dropdown' },
       { title: 'Status Indicator', href: '/components/status-indicator' },
     ],
   },

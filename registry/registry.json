@@ -19,6 +19,28 @@
       "registryDependencies": []
     },
     {
+      "name": "searchable-dropdown",
+      "type": "registry:ui",
+      "title": "Searchable Dropdown",
+      "description": "A searchable dropdown component with support for groups, subgroups, and custom colors",
+      "files": [
+        {
+          "path": "components/ui/input/searchable-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/ui/input/searchable-dropdown.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "command",
+        "label",
+        "popover"
+      ]
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -26,7 +48,8 @@
       "files": [],
       "dependencies": [],
       "registryDependencies": [
-        "@shoscn/status-indicator"
+        "@shoscn/status-indicator",
+        "@shoscn/searchable-dropdown"
       ]
     }
   ]

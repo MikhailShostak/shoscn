@@ -1,10 +1,17 @@
 import Link from 'next/link';
 
 import { DocsLayout } from '@/components/docs-layout';
+import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
 import { StatusIndicator } from '@/components/ui/utils/status-indicator';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const components = [
+  {
+    name: 'Searchable Dropdown',
+    slug: 'searchable-dropdown',
+    description: 'A searchable dropdown component with support for groups, subgroups, and custom colors',
+    preview: <SearchableDropdown value="" onChange={() => {}} options={['Option 1', 'Option 2', 'Option 3']} placeholder="Select..." />,
+  },
   {
     name: 'Status Indicator',
     slug: 'status-indicator',

@@ -1,0 +1,218 @@
+---
+title: Searchable Dropdown
+description: A searchable dropdown component with support for groups, subgroups, and custom colors.
+---
+
+import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
+
+## Preview
+
+<ComponentPreview
+  preview={
+    <SearchableDropdown
+      value=""
+      onChange={() => {}}
+      options={['Apple', 'Banana', 'Orange', 'Mango', 'Grape']}
+      placeholder="Select a fruit..."
+    />
+  }
+  code={`import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
+
+export default function Example() {
+  const [value, setValue] = useState('');
+
+  return (
+    <SearchableDropdown
+      value={value}
+      onChange={setValue}
+      options={['Apple', 'Banana', 'Orange', 'Mango', 'Grape']}
+      placeholder="Select a fruit..."
+    />
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/searchable-dropdown
+```
+
+## Usage
+
+```tsx
+import { SearchableDropdown } from '@/components/ui/input/searchable-dropdown';
+
+export default function MyComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <SearchableDropdown
+      value={value}
+      onChange={setValue}
+      options={['Option 1', 'Option 2', 'Option 3']}
+      placeholder="Select..."
+    />
+  );
+}
+```
+
+## Examples
+
+### With Label
+
+<ComponentPreview
+  preview={
+    <SearchableDropdown
+      label="Favorite Fruit"
+      value=""
+      onChange={() => {}}
+      options={['Apple', 'Banana', 'Orange']}
+      placeholder="Select..."
+    />
+  }
+  code={`<SearchableDropdown
+  label="Favorite Fruit"
+  value={value}
+  onChange={setValue}
+  options={['Apple', 'Banana', 'Orange']}
+  placeholder="Select..."
+/>`}
+/>
+
+### With Groups
+
+<ComponentPreview
+  preview={
+    <SearchableDropdown
+      value=""
+      onChange={() => {}}
+      groups={[
+        {
+          label: 'Fruits',
+          options: ['Apple', 'Banana', 'Orange'],
+        },
+        {
+          label: 'Vegetables',
+          options: ['Carrot', 'Broccoli', 'Spinach'],
+        },
+      ]}
+      placeholder="Select..."
+    />
+  }
+  code={`<SearchableDropdown
+  value={value}
+  onChange={setValue}
+  groups={[
+    {
+      label: 'Fruits',
+      options: ['Apple', 'Banana', 'Orange'],
+    },
+    {
+      label: 'Vegetables',
+      options: ['Carrot', 'Broccoli', 'Spinach'],
+    },
+  ]}
+  placeholder="Select..."
+/>`}
+/>
+
+### With Subgroups
+
+<ComponentPreview
+  preview={
+    <SearchableDropdown
+      value=""
+      onChange={() => {}}
+      groups={[
+        {
+          label: 'Food',
+          options: [],
+          subgroups: [
+            {
+              label: 'Fruits',
+              options: ['Apple', 'Banana', 'Orange'],
+            },
+            {
+              label: 'Vegetables',
+              options: ['Carrot', 'Broccoli', 'Spinach'],
+            },
+          ],
+        },
+      ]}
+      placeholder="Select..."
+    />
+  }
+  code={`<SearchableDropdown
+  value={value}
+  onChange={setValue}
+  groups={[
+    {
+      label: 'Food',
+      options: [],
+      subgroups: [
+        {
+          label: 'Fruits',
+          options: ['Apple', 'Banana', 'Orange'],
+        },
+        {
+          label: 'Vegetables',
+          options: ['Carrot', 'Broccoli', 'Spinach'],
+        },
+      ],
+    },
+  ]}
+  placeholder="Select..."
+/>`}
+/>
+
+### Keep Open On Select
+
+<ComponentPreview
+  preview={
+    <SearchableDropdown
+      value=""
+      onChange={() => {}}
+      options={['Apple', 'Banana', 'Orange']}
+      placeholder="Select..."
+      keepOpenOnSelect
+    />
+  }
+  code={`<SearchableDropdown
+  value={value}
+  onChange={setValue}
+  options={['Apple', 'Banana', 'Orange']}
+  placeholder="Select..."
+  keepOpenOnSelect
+/>`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | - | The selected value |
+| `onChange` | `(value: string) => void` | - | Callback when value changes |
+| `options` | `string[]` | `[]` | Simple list of options |
+| `groups` | `SearchableDropdownGroup[]` | `[]` | Grouped options with optional subgroups |
+| `placeholder` | `string` | `'Select...'` | Placeholder text |
+| `label` | `string` | - | Optional label for the dropdown |
+| `optionColors` | `Record<string, string>` | `{}` | Custom colors for specific options |
+| `className` | `string` | - | Additional CSS classes |
+| `keepOpenOnSelect` | `boolean` | `false` | Keep dropdown open after selection |
+
+### Types
+
+```tsx
+interface SearchableDropdownGroup {
+  label: string;
+  options: string[];
+  color?: string;
+  subgroups?: SearchableDropdownSubgroup[];
+}
+
+interface SearchableDropdownSubgroup {
+  label: string;
+  options: string[];
+}
+```
