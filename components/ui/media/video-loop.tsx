@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import { useVideoLoop } from '@/components/hooks/use-video-loop';
+import { cn } from '@/lib/utils';
 
 export interface VideoLoopProps {
   videos: string[];
