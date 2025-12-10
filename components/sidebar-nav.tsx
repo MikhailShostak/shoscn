@@ -34,6 +34,7 @@ const navigation = [
           { title: 'Grid', href: '/components/grid' },
           { title: 'Horizontal Box', href: '/components/horizontal-box' },
           { title: 'Image Area', href: '/components/image-area' },
+          { title: 'Named Section', href: '/components/named-section' },
           { title: 'Page', href: '/components/page' },
           { title: 'Vertical Box', href: '/components/vertical-box' },
         ],

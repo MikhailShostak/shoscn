@@ -10,6 +10,7 @@ import { FixedArea } from '@/components/ui/layouts/fixed-area';
 import { Grid } from '@/components/ui/layouts/grid';
 import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
 import { ImageArea } from '@/components/ui/layouts/image-area';
+import { NamedSection } from '@/components/ui/layouts/named-section';
 import { Page } from '@/components/ui/layouts/page';
 import { VerticalBox } from '@/components/ui/layouts/vertical-box';
 import IFrame from '@/components/ui/utils/iframe';
@@ -61,6 +62,18 @@ const components = [
         <ImageArea src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23667eea' width='100' height='100'/%3E%3C/svg%3E">
           <div className="w-8 h-8 bg-white rounded" />
         </ImageArea>
+      </div>
+    ),
+  },
+  {
+    name: 'Named Section',
+    slug: 'named-section',
+    description: 'A bordered section container with a title and optional menu',
+    preview: (
+      <div className="w-full h-20 flex items-center justify-center">
+        <NamedSection title="Title">
+          <div className="text-xs text-muted-foreground">Content</div>
+        </NamedSection>
       </div>
     ),
   },

@@ -1,0 +1,76 @@
+---
+title: Named Section
+description: A bordered section container with a title and optional menu
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/named-section
+```
+
+## Usage
+
+```tsx
+import { NamedSection } from '@/components/ui/layouts/named-section';
+
+export default function MyComponent() {
+  return (
+    <NamedSection title="Section Title">
+      <p>Section content goes here</p>
+    </NamedSection>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | - | The section title displayed at the top |
+| `menu` | `React.ReactNode` | - | Optional menu or actions displayed on the right side |
+| `children` | `React.ReactNode` | - | Content to display inside the section |
+
+## Examples
+
+### Basic Section
+
+```tsx
+import { NamedSection } from '@/components/ui/layouts/named-section';
+
+export default function Example() {
+  return (
+    <NamedSection title="User Information">
+      <div className="space-y-2">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@example.com</p>
+      </div>
+    </NamedSection>
+  );
+}
+```
+
+### Section with Menu
+
+```tsx
+import { NamedSection } from '@/components/ui/layouts/named-section';
+import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  return (
+    <NamedSection
+      title="Settings"
+      menu={
+        <Button variant="ghost" size="sm">
+          Edit
+        </Button>
+      }
+    >
+      <div className="space-y-2">
+        <p>Setting 1: Enabled</p>
+        <p>Setting 2: Disabled</p>
+      </div>
+    </NamedSection>
+  );
+}
+```

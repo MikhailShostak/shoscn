@@ -220,6 +220,21 @@
       ]
     },
     {
+      "name": "named-section",
+      "type": "registry:ui",
+      "title": "Named Section",
+      "description": "A bordered section container with a title and optional menu",
+      "files": [
+        {
+          "path": "components/ui/layouts/named-section.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/named-section.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
