@@ -73,6 +73,43 @@
       "registryDependencies": []
     },
     {
+      "name": "chat-input",
+      "type": "registry:ui",
+      "title": "Chat Input",
+      "description": "A chat input component with send button and keyboard shortcuts",
+      "files": [
+        {
+          "path": "components/ui/chat/chat-input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/chat/chat-input.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "textarea"
+      ]
+    },
+    {
+      "name": "chat-message",
+      "type": "registry:ui",
+      "title": "Chat Message",
+      "description": "A chat message component with support for loading state and text formatting",
+      "files": [
+        {
+          "path": "components/ui/chat/chat-message.tsx",
+          "type": "registry:component",
+          "target": "components/ui/chat/chat-message.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "@shoscn/typing-dots"
+      ]
+    },
+    {
       "name": "typing-dots",
       "type": "registry:ui",
       "title": "Typing Dots",

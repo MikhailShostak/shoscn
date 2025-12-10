@@ -1,0 +1,99 @@
+---
+title: Chat Input
+description: A chat input component with send button and keyboard shortcuts
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/chat-input
+```
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { ChatInput } from '@/components/ui/chat/chat-input';
+
+export default function ChatExample() {
+  const [message, setMessage] = useState('');
+
+  const handleSend = (text: string) => {
+    console.log('Sending:', text);
+  };
+
+  return (
+    <ChatInput
+      value={message}
+      onValueChange={setMessage}
+      onSend={handleSend}
+    />
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | - | The current input value |
+| `onValueChange` | `(text: string) => void` | - | Callback when the input value changes |
+| `onSend` | `(text: string) => void` | - | Callback when send is triggered |
+| `placeholder` | `string` | `'Write a message...'` | Placeholder text for the input |
+
+## Features
+
+- **Keyboard Shortcuts**: Press Enter to send, Shift+Enter for new line
+- **Auto-clear**: Input is cleared after sending
+- **Disabled State**: Send button is disabled when input is empty
+- **Textarea**: Multi-line input support
+
+## Examples
+
+### Basic Chat Input
+
+```tsx
+import { useState } from 'react';
+import { ChatInput } from '@/components/ui/chat/chat-input';
+
+export default function Example() {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState<string[]>([]);
+
+  const handleSend = (text: string) => {
+    setMessages([...messages, text]);
+  };
+
+  return (
+    <div>
+      <div className="space-y-2 mb-4">
+        {messages.map((msg, i) => (
+          <div key={i} className="p-2 bg-muted rounded">{msg}</div>
+        ))}
+      </div>
+      <ChatInput
+        value={message}
+        onValueChange={setMessage}
+        onSend={handleSend}
+      />
+    </div>
+  );
+}
+```
+
+### Custom Placeholder
+
+```tsx
+import { ChatInput } from '@/components/ui/chat/chat-input';
+
+export default function Example() {
+  return (
+    <ChatInput
+      value={value}
+      onValueChange={setValue}
+      onSend={handleSend}
+      placeholder="Type your message here..."
+    />
+  );
+}
+```

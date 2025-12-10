@@ -18,6 +18,8 @@ const navigation = [
       {
         title: 'Chat',
         items: [
+          { title: 'Chat Input', href: '/components/chat-input' },
+          { title: 'Chat Message', href: '/components/chat-message' },
           { title: 'Typing Dots', href: '/components/typing-dots' },
         ],
       },

@@ -1,0 +1,114 @@
+---
+title: Chat Message
+description: A chat message component with support for loading state and text formatting
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/chat-message
+```
+
+## Usage
+
+```tsx
+import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="Hello, how can I help you?"
+      className="bg-primary text-primary-foreground"
+    />
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `text` | `string` | - | The message text to display |
+| `className` | `string` | `''` | Additional CSS classes for styling |
+
+## Features
+
+- **Loading State**: Shows typing dots when text is `'...'`
+- **Text Formatting**: Text wrapped in asterisks `*text*` is displayed as muted
+- **Pre-wrap**: Preserves whitespace and line breaks
+
+## Examples
+
+### Basic Message
+
+```tsx
+import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="This is a chat message"
+      className="bg-muted"
+    />
+  );
+}
+```
+
+### Loading Message
+
+```tsx
+import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="..."
+      className="bg-muted"
+    />
+  );
+}
+```
+
+### Formatted Message
+
+```tsx
+import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="Hello! *This is an action* How are you?"
+      className="bg-primary text-primary-foreground"
+    />
+  );
+}
+```
+
+### Chat Conversation
+
+```tsx
+import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  const messages = [
+    { text: 'Hello!', sender: 'user' },
+    { text: '...', sender: 'bot' },
+    { text: 'Hi! *waves* How can I help?', sender: 'bot' },
+  ];
+
+  return (
+    <div className="space-y-2">
+      {messages.map((msg, i) => (
+        <ChatMessage
+          key={i}
+          text={msg.text}
+          className={msg.sender === 'user'
+            ? 'bg-primary text-primary-foreground ml-auto max-w-[80%]'
+            : 'bg-muted max-w-[80%]'
+          }
+        />
+      ))}
+    </div>
+  );
+}
+```
