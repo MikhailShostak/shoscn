@@ -3,6 +3,90 @@ title: Chat Message
 description: A chat message component with support for loading state and text formatting
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { ChatMessageBasic, ChatMessageLoading, ChatMessageFormatted, ChatConversation } from '@/components/examples/chat-examples';
+
+## Preview
+
+### Basic Message
+
+<ComponentPreview
+  preview={<ChatMessageBasic />}
+  code={`import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="Hello, how can I help you?"
+      className="bg-muted"
+    />
+  );
+}`}
+/>
+
+### Loading State
+
+<ComponentPreview
+  preview={<ChatMessageLoading />}
+  code={`import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="..."
+      className="bg-muted"
+    />
+  );
+}`}
+/>
+
+### Formatted Message
+
+<ComponentPreview
+  preview={<ChatMessageFormatted />}
+  code={`import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  return (
+    <ChatMessage
+      text="Hello! *waves* How are you today?"
+      className="bg-primary text-primary-foreground"
+    />
+  );
+}`}
+/>
+
+### Conversation
+
+<ComponentPreview
+  preview={<ChatConversation />}
+  code={`import { ChatMessage } from '@/components/ui/chat/chat-message';
+
+export default function Example() {
+  const messages = [
+    { text: 'Hello!', sender: 'user' },
+    { text: '...', sender: 'bot' },
+    { text: 'Hi! *waves* How can I help?', sender: 'bot' },
+  ];
+
+  return (
+    <div className="space-y-2">
+      {messages.map((msg, i) => (
+        <ChatMessage
+          key={i}
+          text={msg.text}
+          className={
+            msg.sender === 'user'
+              ? 'bg-primary text-primary-foreground ml-auto max-w-[80%]'
+              : 'bg-muted max-w-[80%]'
+          }
+        />
+      ))}
+    </div>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash

@@ -3,6 +3,63 @@ title: Chat Input
 description: A chat input component with send button and keyboard shortcuts
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { ChatInputBasic, ChatInputCustomPlaceholder } from '@/components/examples/chat-examples';
+
+## Preview
+
+### Basic Chat Input
+
+<ComponentPreview
+  preview={<ChatInputBasic />}
+  code={`import { useState } from 'react';
+import { ChatInput } from '@/components/ui/chat/chat-input';
+
+export default function Example() {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState<string[]>([]);
+
+  const handleSend = (text: string) => {
+    setMessages([...messages, text]);
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="space-y-2">
+        {messages.map((msg, i) => (
+          <div key={i} className="p-2 bg-muted rounded">
+            {msg}
+          </div>
+        ))}
+      </div>
+      <ChatInput
+        value={message}
+        onValueChange={setMessage}
+        onSend={handleSend}
+      />
+    </div>
+  );
+}`}
+/>
+
+### Custom Placeholder
+
+<ComponentPreview
+  preview={<ChatInputCustomPlaceholder />}
+  code={`import { ChatInput } from '@/components/ui/chat/chat-input';
+
+export default function Example() {
+  return (
+    <ChatInput
+      value={message}
+      onValueChange={setMessage}
+      onSend={handleSend}
+      placeholder="Type your message here..."
+    />
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
