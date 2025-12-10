@@ -1,0 +1,182 @@
+---
+title: useTimer
+description: A hook for managing timers with start, stop, and restart functionality
+---
+
+import { ComponentPreview } from '@/components/component-preview';
+import { UseTimerBasic, UseTimerWithControls } from '@/components/examples/hook-examples';
+
+## Preview
+
+### Basic Timer
+
+<ComponentPreview
+  preview={<UseTimerBasic />}
+  code={`import { useState } from 'react';
+import { useTimer } from '@/components/hooks/use-timer';
+import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  const [message, setMessage] = useState('');
+
+  const timer = useTimer({
+    delay: 3000,
+    onTimeout: () => setMessage('Timer completed!'),
+  });
+
+  return (
+    <div className="space-y-4">
+      <Button onClick={timer.start}>Start 3s Timer</Button>
+      {timer.isActive && (
+        <p>Time remaining: {(timer.remainingTime / 1000).toFixed(1)}s</p>
+      )}
+      {message && <p className="text-green-500">{message}</p>}
+    </div>
+  );
+}`}
+/>
+
+### Timer with Controls
+
+<ComponentPreview
+  preview={<UseTimerWithControls />}
+  code={`import { useState } from 'react';
+import { useTimer } from '@/components/hooks/use-timer';
+import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  const [count, setCount] = useState(0);
+
+  const timer = useTimer({
+    delay: 5000,
+    onTimeout: () => setCount(c => c + 1),
+  });
+
+  return (
+    <div className="space-y-4">
+      <div className="flex gap-2">
+        <Button onClick={timer.start}>Start</Button>
+        <Button onClick={timer.stop} variant="destructive">Stop</Button>
+        <Button onClick={() => timer.restart(true)} variant="outline">Restart</Button>
+      </div>
+      {timer.isActive && (
+        <div>
+          <p>Status: Active</p>
+          <p>Remaining: {(timer.remainingTime / 1000).toFixed(1)}s</p>
+        </div>
+      )}
+      <p>Completed count: {count}</p>
+    </div>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/use-timer
+```
+
+## Usage
+
+```tsx
+import { useTimer } from '@/components/hooks/use-timer';
+
+export default function MyComponent() {
+  const timer = useTimer({
+    delay: 5000,
+    onTimeout: () => {
+      console.log('Timer completed!');
+    },
+  });
+
+  return (
+    <button onClick={timer.start}>Start Timer</button>
+  );
+}
+```
+
+## API Reference
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `delay` | `number` | - | The timer duration in milliseconds |
+| `onTimeout` | `() => void` | - | Callback function called when timer completes |
+| `enabled` | `boolean` | `true` | Whether the timer is enabled |
+
+### Return Value
+
+Returns an object with the following properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `isActive` | `boolean` | Whether the timer is currently running |
+| `remainingTime` | `number` | Remaining time in milliseconds |
+| `start` | `() => void` | Starts the timer |
+| `stop` | `() => void` | Stops the timer |
+| `restart` | `(activate?: boolean) => void` | Restarts the timer. If `activate` is true, starts even if not currently active |
+
+## Examples
+
+### Auto-save Timer
+
+```tsx
+import { useTimer } from '@/components/hooks/use-timer';
+import { useEffect } from 'react';
+
+export default function AutoSaveForm() {
+  const [data, setData] = useState('');
+
+  const saveTimer = useTimer({
+    delay: 2000,
+    onTimeout: () => {
+      console.log('Auto-saving...', data);
+    },
+  });
+
+  useEffect(() => {
+    if (data) {
+      saveTimer.restart(true);
+    }
+  }, [data]);
+
+  return (
+    <input
+      value={data}
+      onChange={(e) => setData(e.target.value)}
+      placeholder="Type to auto-save..."
+    />
+  );
+}
+```
+
+### Countdown Timer
+
+```tsx
+import { useTimer } from '@/components/hooks/use-timer';
+import { useState } from 'react';
+
+export default function Countdown() {
+  const [isFinished, setIsFinished] = useState(false);
+
+  const timer = useTimer({
+    delay: 10000,
+    onTimeout: () => setIsFinished(true),
+  });
+
+  return (
+    <div>
+      <button onClick={timer.start}>Start Countdown</button>
+      {timer.isActive && (
+        <div>
+          <p>Time left: {Math.ceil(timer.remainingTime / 1000)}s</p>
+          <button onClick={timer.stop}>Cancel</button>
+        </div>
+      )}
+      {isFinished && <p>Time's up!</p>}
+    </div>
+  );
+}
+```

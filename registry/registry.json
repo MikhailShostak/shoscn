@@ -128,6 +128,21 @@
       "registryDependencies": []
     },
     {
+      "name": "use-timer",
+      "type": "registry:hook",
+      "title": "useTimer",
+      "description": "A hook for managing timers with start, stop, and restart functionality",
+      "files": [
+        {
+          "path": "components/hooks/use-timer.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-timer.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "grid",
       "type": "registry:ui",
       "title": "Grid",

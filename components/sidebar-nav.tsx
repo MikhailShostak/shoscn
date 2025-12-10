@@ -60,6 +60,7 @@ const navigation = [
     items: [
       { title: 'useDebounce', href: '/hooks/use-debounce' },
       { title: 'useFadeElement', href: '/hooks/use-fade-element' },
+      { title: 'useTimer', href: '/hooks/use-timer' },
       { title: 'useVideoLoop', href: '/hooks/use-video-loop' },
     ],
   },

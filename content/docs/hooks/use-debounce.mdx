@@ -3,6 +3,98 @@ title: useDebounce
 description: A hook for debouncing callback functions with cancel functionality
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { UseDebounceBasic, UseDebounceWithCancel } from '@/components/examples/hook-examples';
+
+## Preview
+
+### Basic Debounce
+
+<ComponentPreview
+  preview={<UseDebounceBasic />}
+  code={`import { useState } from 'react';
+import { useDebounce } from '@/components/hooks/use-debounce';
+import { Input } from '@/components/ui/input';
+
+export default function Example() {
+  const [value, setValue] = useState('');
+  const [debouncedValue, setDebouncedValue] = useState('');
+
+  const debouncedUpdate = useDebounce((val: string) => {
+    setDebouncedValue(val);
+  }, 500);
+
+  return (
+    <div className="space-y-4">
+      <Input
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+          debouncedUpdate(e.target.value);
+        }}
+        placeholder="Type to see debouncing..."
+      />
+      <div>
+        <p>Current: {value}</p>
+        <p>Debounced (500ms): {debouncedValue}</p>
+      </div>
+    </div>
+  );
+}`}
+/>
+
+### With Cancel
+
+<ComponentPreview
+  preview={<UseDebounceWithCancel />}
+  code={`import { useState } from 'react';
+import { useDebounce } from '@/components/hooks/use-debounce';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  const [value, setValue] = useState('');
+  const [results, setResults] = useState<string[]>([]);
+
+  const debouncedSearch = useDebounce((val: string) => {
+    if (val) {
+      setResults([\`Result for "\${val}"\`]);
+    } else {
+      setResults([]);
+    }
+  }, 300);
+
+  const handleReset = () => {
+    setValue('');
+    setResults([]);
+    debouncedSearch.cancel();
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="flex gap-2">
+        <Input
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+            debouncedSearch(e.target.value);
+          }}
+          placeholder="Search..."
+        />
+        <Button onClick={handleReset}>Reset</Button>
+      </div>
+      {results.length > 0 && (
+        <div>
+          {results.map((result, i) => (
+            <p key={i}>{result}</p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash
