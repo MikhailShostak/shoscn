@@ -3,6 +3,55 @@ title: Named Section
 description: A bordered section container with a title and optional menu
 ---
 
+import { ComponentPreview } from '@/components/component-preview';
+import { NamedSectionBasic, NamedSectionWithMenu } from '@/components/examples/layout-examples';
+
+## Preview
+
+### Basic
+
+<ComponentPreview
+  preview={<NamedSectionBasic />}
+  code={`import { NamedSection } from '@/components/ui/layouts/named-section';
+
+export default function Example() {
+  return (
+    <NamedSection title="User Information">
+      <div className="space-y-2">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@example.com</p>
+      </div>
+    </NamedSection>
+  );
+}`}
+/>
+
+### With Menu
+
+<ComponentPreview
+  preview={<NamedSectionWithMenu />}
+  code={`import { NamedSection } from '@/components/ui/layouts/named-section';
+import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  return (
+    <NamedSection
+      title="Settings"
+      menu={
+        <Button variant="ghost" size="sm">
+          Edit
+        </Button>
+      }
+    >
+      <div className="space-y-2">
+        <p>Setting 1: Enabled</p>
+        <p>Setting 2: Disabled</p>
+      </div>
+    </NamedSection>
+  );
+}`}
+/>
+
 ## Installation
 
 ```bash

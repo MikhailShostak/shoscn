@@ -4,6 +4,7 @@ import { FixedArea } from '@/components/ui/layouts/fixed-area';
 import { Grid } from '@/components/ui/layouts/grid';
 import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
 import { ImageArea } from '@/components/ui/layouts/image-area';
+import { NamedSection } from '@/components/ui/layouts/named-section';
 import { Page } from '@/components/ui/layouts/page';
 import { VerticalBox } from '@/components/ui/layouts/vertical-box';
 
@@ -106,6 +107,39 @@ export function ImageAreaBasic() {
           <p className="text-xl">Beautiful blurred background</p>
         </div>
       </ImageArea>
+    </div>
+  );
+}
+
+export function NamedSectionBasic() {
+  return (
+    <div className="p-4">
+      <NamedSection title="User Information">
+        <div className="space-y-2">
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> john@example.com</p>
+        </div>
+      </NamedSection>
+    </div>
+  );
+}
+
+export function NamedSectionWithMenu() {
+  return (
+    <div className="p-4">
+      <NamedSection
+        title="Settings"
+        menu={
+          <button className="text-sm text-muted-foreground hover:text-foreground">
+            Edit
+          </button>
+        }
+      >
+        <div className="space-y-2">
+          <p>Setting 1: Enabled</p>
+          <p>Setting 2: Disabled</p>
+        </div>
+      </NamedSection>
     </div>
   );
 }
