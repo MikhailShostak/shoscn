@@ -1,0 +1,82 @@
+---
+title: Controlled Input
+description: An input component with debounced value changes and Enter key submission.
+---
+
+import { ControlledInputBasic, ControlledInputWithAccept } from '@/components/examples/input-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<ControlledInputBasic />}
+  code={`import { ControlledInput } from '@/components/ui/input/controlled-input';
+
+export default function Example() {
+  const [value, setValue] = useState('');
+
+  return (
+    <ControlledInput
+      value={value}
+      onValueChanged={setValue}
+      placeholder="Type something..."
+    />
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/controlled-input
+```
+
+## Usage
+
+```tsx
+import { ControlledInput } from '@/components/ui/input/controlled-input';
+
+export default function MyComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <ControlledInput
+      value={value}
+      onValueChanged={setValue}
+      placeholder="Type something..."
+    />
+  );
+}
+```
+
+## Examples
+
+### With Accept Handler
+
+Press Enter to accept the value and trigger the `onAccepted` callback.
+
+<ComponentPreview
+  preview={<ControlledInputWithAccept />}
+  code={`<ControlledInput
+  value={value}
+  onValueChanged={setValue}
+  onAccepted={setAccepted}
+  placeholder="Type and press Enter..."
+/>`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | - | The controlled value |
+| `onValueChanged` | `(value: string) => void` | - | Callback triggered when value changes (debounced 500ms) |
+| `onAccepted` | `(value: string) => void` | - | Callback triggered when Enter key is pressed |
+| `className` | `string` | - | Additional CSS classes |
+
+All other props are passed through to the underlying [Input](https://ui.shadcn.com/docs/components/input) component.
+
+## Behavior
+
+- **Debounced Changes**: The `onValueChanged` callback is debounced by 500ms to avoid excessive updates
+- **Enter Key**: Pressing Enter immediately triggers both `onValueChanged` and `onAccepted` callbacks, canceling any pending debounced update
+- **External Updates**: When the `value` prop changes externally, the component updates without triggering the `onValueChanged` callback

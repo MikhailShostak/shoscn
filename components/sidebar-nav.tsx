@@ -26,6 +26,8 @@ const navigation = [
       {
         title: 'Input',
         items: [
+          { title: 'Controlled Input', href: '/components/controlled-input' },
+          { title: 'Controlled Textarea', href: '/components/controlled-textarea' },
           { title: 'Searchable Dropdown', href: '/components/searchable-dropdown' },
         ],
       },

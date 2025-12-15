@@ -1,0 +1,87 @@
+---
+title: Controlled Textarea
+description: A textarea component with debounced value changes and Enter key submission.
+---
+
+import { ControlledTextareaBasic, ControlledTextareaWithAccept } from '@/components/examples/input-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<ControlledTextareaBasic />}
+  code={`import { ControlledTextarea } from '@/components/ui/input/controlled-textarea';
+
+export default function Example() {
+  const [value, setValue] = useState('');
+
+  return (
+    <ControlledTextarea
+      value={value}
+      onValueChanged={setValue}
+      placeholder="Type something..."
+      rows={4}
+    />
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/controlled-textarea
+```
+
+## Usage
+
+```tsx
+import { ControlledTextarea } from '@/components/ui/input/controlled-textarea';
+
+export default function MyComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <ControlledTextarea
+      value={value}
+      onValueChanged={setValue}
+      placeholder="Type something..."
+      rows={4}
+    />
+  );
+}
+```
+
+## Examples
+
+### With Accept Handler
+
+Press Enter to accept the value (Shift+Enter for new line).
+
+<ComponentPreview
+  preview={<ControlledTextareaWithAccept />}
+  code={`<ControlledTextarea
+  value={value}
+  onValueChanged={setValue}
+  onAccepted={setAccepted}
+  placeholder="Type and press Enter (Shift+Enter for new line)..."
+  rows={4}
+/>`}
+/>
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | - | The controlled value |
+| `onValueChanged` | `(value: string) => void` | - | Callback triggered when value changes (debounced 500ms) |
+| `onAccepted` | `(value: string) => void` | - | Callback triggered when Enter key is pressed |
+| `className` | `string` | - | Additional CSS classes |
+
+All other props are passed through to the underlying [Textarea](https://ui.shadcn.com/docs/components/textarea) component.
+
+## Behavior
+
+- **Debounced Changes**: The `onValueChanged` callback is debounced by 500ms to avoid excessive updates
+- **Enter Key**: Pressing Enter (without Shift) triggers both `onValueChanged` and `onAccepted` callbacks if `onAccepted` is provided
+- **New Lines**: Pressing Shift+Enter creates a new line without triggering acceptance
+- **External Updates**: When the `value` prop changes externally, the component updates without triggering the `onValueChanged` callback
+- **No Accept Handler**: If `onAccepted` is not provided, Enter key behaves normally (creates new line)

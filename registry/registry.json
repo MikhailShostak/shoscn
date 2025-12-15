@@ -19,6 +19,42 @@
       "registryDependencies": []
     },
     {
+      "name": "controlled-input",
+      "type": "registry:ui",
+      "title": "Controlled Input",
+      "description": "An input component with debounced value changes and Enter key submission",
+      "files": [
+        {
+          "path": "components/ui/input/controlled-input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/input/controlled-input.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "@shoscn/use-debounce"
+      ]
+    },
+    {
+      "name": "controlled-textarea",
+      "type": "registry:ui",
+      "title": "Controlled Textarea",
+      "description": "A textarea component with debounced value changes and Enter key submission",
+      "files": [
+        {
+          "path": "components/ui/input/controlled-textarea.tsx",
+          "type": "registry:component",
+          "target": "components/ui/input/controlled-textarea.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "@shoscn/use-debounce"
+      ]
+    },
+    {
       "name": "searchable-dropdown",
       "type": "registry:ui",
       "title": "Searchable Dropdown",
