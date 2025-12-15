@@ -58,6 +58,12 @@ const navigation = [
     ],
   },
   {
+    title: 'Providers',
+    items: [
+      { title: 'Recycling Provider', href: '/providers/recycling-provider' },
+    ],
+  },
+  {
     title: 'Hooks',
     items: [
       { title: 'useDebounce', href: '/hooks/use-debounce' },

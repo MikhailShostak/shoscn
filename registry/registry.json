@@ -287,6 +287,21 @@
       "registryDependencies": []
     },
     {
+      "name": "recycling-provider",
+      "type": "registry:ui",
+      "title": "Recycling Provider",
+      "description": "A provider for efficient virtual scrolling with progressive loading",
+      "files": [
+        {
+          "path": "components/providers/recycling-provider.tsx",
+          "type": "registry:component",
+          "target": "components/providers/recycling-provider.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
