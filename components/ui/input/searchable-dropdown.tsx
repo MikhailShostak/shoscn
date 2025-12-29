@@ -91,7 +91,7 @@ export function SearchableDropdown({
           )}
         </div>
         <PopoverContent className="w-auto min-w-[250px] max-w-[600px] p-0" align="start">
-          <Command>
+          <Command defaultValue={value}>
             <CommandInput placeholder="Search..." />
             <CommandList>
               <CommandEmpty>No results found.</CommandEmpty>
