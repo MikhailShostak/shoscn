@@ -73,7 +73,7 @@ export function SearchableDropdown({
               role="combobox"
               aria-expanded={open}
               aria-label="Select option"
-              className={cn('w-full justify-between pr-10', !value && 'text-muted-foreground')}
+              className={cn('w-full justify-between pr-10', !value && 'text-muted-foreground', value && 'mr-2')}
             >
               {value || placeholder}
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
