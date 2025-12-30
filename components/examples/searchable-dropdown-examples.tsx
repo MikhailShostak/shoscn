@@ -42,10 +42,12 @@ export function SearchableDropdownWithGroups() {
         {
           label: 'Fruits',
           options: ['Apple', 'Banana', 'Orange'],
+          color: '#f97316',
         },
         {
           label: 'Vegetables',
           options: ['Carrot', 'Broccoli', 'Spinach'],
+          color: '#10b981',
         },
       ]}
       placeholder="Select..."
@@ -64,14 +66,34 @@ export function SearchableDropdownWithSubgroups() {
         {
           label: 'Food',
           options: [],
+          color: '#10b981',
           subgroups: [
             {
               label: 'Fruits',
-              options: ['Apple', 'Banana', 'Orange'],
+              options: ['Apple', 'Banana', 'Orange', 'Mango', 'Grape', 'Strawberry', 'Watermelon', 'Pineapple', 'Kiwi', 'Peach'],
             },
             {
               label: 'Vegetables',
-              options: ['Carrot', 'Broccoli', 'Spinach'],
+              options: ['Carrot', 'Broccoli', 'Spinach', 'Tomato', 'Cucumber', 'Lettuce', 'Pepper', 'Onion', 'Garlic', 'Potato'],
+            },
+            {
+              label: 'Grains',
+              options: ['Rice', 'Wheat', 'Oats', 'Barley', 'Quinoa', 'Corn', 'Millet', 'Rye'],
+            },
+          ],
+        },
+        {
+          label: 'Beverages',
+          options: [],
+          color: '#3b82f6',
+          subgroups: [
+            {
+              label: 'Hot Drinks',
+              options: ['Coffee', 'Tea', 'Hot Chocolate', 'Espresso', 'Cappuccino', 'Latte', 'Mocha'],
+            },
+            {
+              label: 'Cold Drinks',
+              options: ['Water', 'Juice', 'Soda', 'Lemonade', 'Iced Tea', 'Smoothie', 'Milkshake'],
             },
           ],
         },
