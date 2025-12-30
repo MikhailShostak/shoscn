@@ -52,6 +52,7 @@ const navigation = [
       {
         title: 'Utils',
         items: [
+          { title: 'Grid Size Switcher', href: '/components/grid-size-switcher' },
           { title: 'IFrame', href: '/components/iframe' },
           { title: 'Spinner', href: '/components/spinner' },
           { title: 'Status Indicator', href: '/components/status-indicator' },

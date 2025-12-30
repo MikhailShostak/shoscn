@@ -1,0 +1,81 @@
+---
+title: Grid Size Switcher
+description: A popover button for switching between grid size variants
+---
+
+import { ComponentPreview } from '@/components/component-preview';
+import { GridSizeSwitcherBasic } from '@/components/examples/utils-examples';
+
+## Preview
+
+<ComponentPreview
+  preview={<GridSizeSwitcherBasic />}
+  code={`import { useState } from 'react';
+import { Grid, GridSize } from '@/components/ui/layouts/grid';
+import { GridSizeSwitcher } from '@/components/ui/utils/grid-size-switcher';
+
+export default function Example() {
+  const [gridSize, setGridSize] = useState<GridSize>('medium');
+
+  return (
+    <div className="space-y-4">
+      <div className="flex justify-end">
+        <GridSizeSwitcher value={gridSize} onChange={setGridSize} />
+      </div>
+      <Grid size={gridSize}>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 1</div>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 2</div>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 3</div>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 4</div>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 5</div>
+        <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Item 6</div>
+      </Grid>
+    </div>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/grid-size-switcher
+```
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { GridSizeSwitcher } from '@/components/ui/utils/grid-size-switcher';
+import { Grid, GridSize } from '@/components/ui/layouts/grid';
+
+export default function MyComponent() {
+  const [size, setSize] = useState<GridSize>('medium');
+
+  return (
+    <div>
+      <GridSizeSwitcher value={size} onChange={setSize} />
+      <Grid size={size}>
+        {/* Grid items */}
+      </Grid>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `GridSize` | - | Current grid size value |
+| `onChange` | `(size: GridSize) => void` | - | Callback when grid size changes |
+| `buttonSize` | `'default' \| 'sm' \| 'lg' \| 'icon'` | `'default'` | Size of the trigger button |
+| `align` | `'start' \| 'center' \| 'end'` | `'end'` | Alignment of the popover content |
+
+## GridSize Type
+
+The `GridSize` type supports the following values:
+
+- `'tiny'` - Extra small grid with many columns
+- `'small'` - Small grid with moderate columns
+- `'medium'` - Medium-sized grid (default)
+- `'large'` - Large grid with fewer columns

@@ -109,6 +109,26 @@
       "registryDependencies": []
     },
     {
+      "name": "grid-size-switcher",
+      "type": "registry:ui",
+      "title": "Grid Size Switcher",
+      "description": "A popover button for switching between grid size variants",
+      "files": [
+        {
+          "path": "components/ui/utils/grid-size-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/ui/utils/grid-size-switcher.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "popover"
+      ]
+    },
+    {
       "name": "chat-input",
       "type": "registry:ui",
       "title": "Chat Input",
