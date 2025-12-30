@@ -1,5 +1,3 @@
-'use client';
-
 export interface PageProps {
   children: React.ReactNode;
 }
