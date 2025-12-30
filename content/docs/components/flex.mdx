@@ -1,0 +1,109 @@
+---
+title: Flex
+description: A flexible flexbox layout component with support for all four directions and alignment options
+---
+
+import { ComponentPreview } from '@/components/component-preview';
+import { FlexRow, FlexRowReverse, FlexCol, FlexColReverse } from '@/components/examples/layout-examples';
+
+## Preview
+
+### Row
+
+<ComponentPreview
+  preview={<FlexRow />}
+  code={`import { Flex } from '@/components/ui/layouts/flex';
+
+export default function Example() {
+  return (
+    <Flex direction="row">
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </Flex>
+  );
+}`}
+/>
+
+### Row Reverse
+
+<ComponentPreview
+  preview={<FlexRowReverse />}
+  code={`import { Flex } from '@/components/ui/layouts/flex';
+
+export default function Example() {
+  return (
+    <Flex direction="row-reverse">
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First (right)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third (left)</div>
+    </Flex>
+  );
+}`}
+/>
+
+### Column
+
+<ComponentPreview
+  preview={<FlexCol />}
+  code={`import { Flex } from '@/components/ui/layouts/flex';
+
+export default function Example() {
+  return (
+    <Flex direction="col">
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </Flex>
+  );
+}`}
+/>
+
+### Column Reverse
+
+<ComponentPreview
+  preview={<FlexColReverse />}
+  code={`import { Flex } from '@/components/ui/layouts/flex';
+
+export default function Example() {
+  return (
+    <Flex direction="col-reverse">
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First (bottom)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third (top)</div>
+    </Flex>
+  );
+}`}
+/>
+
+## Installation
+
+```bash
+npx shadcn@latest add @shoscn/flex
+```
+
+## Usage
+
+```tsx
+import { Flex } from '@/components/ui/layouts/flex';
+
+export default function MyComponent() {
+  return (
+    <Flex direction="row" justify="center" align="center">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </Flex>
+  );
+}
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `React.ReactNode` | - | Child elements to display in the flex layout |
+| `direction` | `'row' \| 'row-reverse' \| 'col' \| 'col-reverse'` | `'row'` | Flex direction |
+| `justify` | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly'` | `'start'` | Justify content along the main axis |
+| `align` | `'start' \| 'end' \| 'center' \| 'baseline' \| 'stretch'` | `'start'` | Align items along the cross axis |
+| `gap` | `string` | `'gap-4'` | Gap between flex items (Tailwind CSS class) |

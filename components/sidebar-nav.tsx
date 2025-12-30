@@ -35,6 +35,7 @@ const navigation = [
         title: 'Layouts',
         items: [
           { title: 'Fixed Area', href: '/components/fixed-area' },
+          { title: 'Flex', href: '/components/flex' },
           { title: 'Grid', href: '/components/grid' },
           { title: 'Horizontal Box', href: '/components/horizontal-box' },
           { title: 'Image Area', href: '/components/image-area' },

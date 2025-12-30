@@ -1,12 +1,53 @@
 'use client';
 
 import { FixedArea } from '@/components/ui/layouts/fixed-area';
+import { Flex } from '@/components/ui/layouts/flex';
 import { Grid } from '@/components/ui/layouts/grid';
 import { HorizontalBox } from '@/components/ui/layouts/horizontal-box';
 import { ImageArea } from '@/components/ui/layouts/image-area';
 import { NamedSection } from '@/components/ui/layouts/named-section';
 import { Page } from '@/components/ui/layouts/page';
 import { VerticalBox } from '@/components/ui/layouts/vertical-box';
+
+export function FlexRow() {
+  return (
+    <Flex direction="row">
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </Flex>
+  );
+}
+
+export function FlexRowReverse() {
+  return (
+    <Flex direction="row-reverse">
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First (right)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third (left)</div>
+    </Flex>
+  );
+}
+
+export function FlexCol() {
+  return (
+    <Flex direction="col">
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third</div>
+    </Flex>
+  );
+}
+
+export function FlexColReverse() {
+  return (
+    <Flex direction="col-reverse">
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First (bottom)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
+      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third (top)</div>
+    </Flex>
+  );
+}
 
 export function GridBasic() {
   return (

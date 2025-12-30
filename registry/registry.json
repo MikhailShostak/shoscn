@@ -251,6 +251,21 @@
       "registryDependencies": []
     },
     {
+      "name": "flex",
+      "type": "registry:ui",
+      "title": "Flex",
+      "description": "A flexible flexbox layout component with support for all four directions",
+      "files": [
+        {
+          "path": "components/ui/layouts/flex.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/flex.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "horizontal-box",
       "type": "registry:ui",
       "title": "Horizontal Box",
