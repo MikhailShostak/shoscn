@@ -380,18 +380,28 @@
       "files": [],
       "dependencies": [],
       "registryDependencies": [
+        "@shoscn/chat-input",
+        "@shoscn/chat-message",
+        "@shoscn/typing-dots",
+        "@shoscn/controlled-input",
+        "@shoscn/controlled-textarea",
+        "@shoscn/searchable-dropdown",
         "@shoscn/fixed-area",
+        "@shoscn/flex",
         "@shoscn/grid",
         "@shoscn/horizontal-box",
-        "@shoscn/iframe",
         "@shoscn/image-area",
+        "@shoscn/named-section",
         "@shoscn/page",
-        "@shoscn/searchable-dropdown",
+        "@shoscn/vertical-box",
+        "@shoscn/video-loop",
+        "@shoscn/grid-size-switcher",
+        "@shoscn/iframe",
         "@shoscn/spinner",
         "@shoscn/status-indicator",
-        "@shoscn/typing-dots",
-        "@shoscn/vertical-box",
-        "@shoscn/video-loop"
+        "@shoscn/recycling-provider",
+        "@shoscn/use-debounce",
+        "@shoscn/use-timer"
       ]
     }
   ]
