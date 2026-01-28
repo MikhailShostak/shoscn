@@ -11,9 +11,6 @@ export function SiteHeader() {
           <Link href="/" className="transition-colors hover:text-foreground/80">
             Docs
           </Link>
-          <Link href="/components" className="transition-colors hover:text-foreground/80">
-            Components
-          </Link>
           <Link
             href="https://github.com/MikhailShostak/shoscn"
             target="_blank"

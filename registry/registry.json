@@ -266,36 +266,6 @@
       "registryDependencies": []
     },
     {
-      "name": "horizontal-box",
-      "type": "registry:ui",
-      "title": "Horizontal Box",
-      "description": "A horizontal flexbox layout component with optional reverse direction",
-      "files": [
-        {
-          "path": "components/ui/layouts/horizontal-box.tsx",
-          "type": "registry:component",
-          "target": "components/ui/layouts/horizontal-box.tsx"
-        }
-      ],
-      "dependencies": [],
-      "registryDependencies": []
-    },
-    {
-      "name": "vertical-box",
-      "type": "registry:ui",
-      "title": "Vertical Box",
-      "description": "A vertical flexbox layout component with optional reverse direction",
-      "files": [
-        {
-          "path": "components/ui/layouts/vertical-box.tsx",
-          "type": "registry:component",
-          "target": "components/ui/layouts/vertical-box.tsx"
-        }
-      ],
-      "dependencies": [],
-      "registryDependencies": []
-    },
-    {
       "name": "page",
       "type": "registry:ui",
       "title": "Page",
@@ -389,11 +359,9 @@
         "@shoscn/fixed-area",
         "@shoscn/flex",
         "@shoscn/grid",
-        "@shoscn/horizontal-box",
         "@shoscn/image-area",
         "@shoscn/named-section",
         "@shoscn/page",
-        "@shoscn/vertical-box",
         "@shoscn/video-loop",
         "@shoscn/grid-size-switcher",
         "@shoscn/iframe",
