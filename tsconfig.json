@@ -19,9 +19,16 @@
       }
     ],
     "paths": {
+      "@/components/ui/chat/*": ["./registry/components/ui/chat/*"],
+      "@/components/ui/input/*": ["./registry/components/ui/input/*"],
+      "@/components/ui/layouts/*": ["./registry/components/ui/layouts/*"],
+      "@/components/ui/media/*": ["./registry/components/ui/media/*"],
+      "@/components/ui/utils/*": ["./registry/components/ui/utils/*"],
+      "@/components/hooks/*": ["./registry/components/hooks/*"],
+      "@/components/providers/*": ["./registry/components/providers/*"],
       "@/*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "registry"]
+  "exclude": ["node_modules"]
 }
