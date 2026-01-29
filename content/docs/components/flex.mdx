@@ -1,6 +1,6 @@
 ---
 title: Flex
-description: A flexible flexbox layout component with support for all four directions and alignment options
+description: A flexible flexbox layout component with support for row/column directions and alignment options
 ---
 
 import { ComponentPreview } from '@/components/component-preview';
@@ -16,10 +16,10 @@ import { FlexRow, FlexRowReverse, FlexCol, FlexColReverse } from '@/components/e
 
 export default function Example() {
   return (
-    <Flex direction="row">
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First</div>
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second</div>
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third</div>
+    <Flex row className="gap-4">
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
     </Flex>
   );
 }`}
@@ -33,10 +33,10 @@ export default function Example() {
 
 export default function Example() {
   return (
-    <Flex direction="row-reverse">
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">First (right)</div>
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
-      <div className="h-20 w-full bg-primary/20 rounded flex items-center justify-center">Third (left)</div>
+    <Flex row reversed className="gap-4">
+      <div>First (right)</div>
+      <div>Second (middle)</div>
+      <div>Third (left)</div>
     </Flex>
   );
 }`}
@@ -50,10 +50,10 @@ export default function Example() {
 
 export default function Example() {
   return (
-    <Flex direction="col">
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First</div>
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second</div>
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third</div>
+    <Flex className="gap-4">
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
     </Flex>
   );
 }`}
@@ -67,10 +67,10 @@ export default function Example() {
 
 export default function Example() {
   return (
-    <Flex direction="col-reverse">
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">First (bottom)</div>
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Second (middle)</div>
-      <div className="h-20 bg-primary/20 rounded flex items-center justify-center">Third (top)</div>
+    <Flex reversed className="gap-4">
+      <div>First (bottom)</div>
+      <div>Second (middle)</div>
+      <div>Third (top)</div>
     </Flex>
   );
 }`}
@@ -89,7 +89,7 @@ import { Flex } from '@/components/ui/layouts/flex';
 
 export default function MyComponent() {
   return (
-    <Flex direction="row" justify="center" align="center">
+    <Flex row justify="center" align="center" className="gap-4">
       <div>Item 1</div>
       <div>Item 2</div>
       <div>Item 3</div>
@@ -102,8 +102,10 @@ export default function MyComponent() {
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `children` | `React.ReactNode` | - | Child elements to display in the flex layout |
-| `direction` | `'row' \| 'row-reverse' \| 'col' \| 'col-reverse'` | `'row'` | Flex direction |
+| `row` | `boolean` | `false` | Use row direction (default is column) |
+| `reversed` | `boolean` | `false` | Reverse the flex direction |
 | `justify` | `'start' \| 'end' \| 'center' \| 'between' \| 'around' \| 'evenly'` | `'start'` | Justify content along the main axis |
-| `align` | `'start' \| 'end' \| 'center' \| 'baseline' \| 'stretch'` | `'start'` | Align items along the cross axis |
-| `gap` | `string` | `'gap-4'` | Gap between flex items (Tailwind CSS class) |
+| `align` | `'start' \| 'end' \| 'center' \| 'baseline' \| 'stretch'` | `'stretch'` | Align items along the cross axis |
+| `withPaddings` | `boolean` | `false` | Apply CSS variable-based padding and gap |
+| `expanded` | `boolean` | `false` | Apply `flex-1` to fill available space |
+| `className` | `string` | - | Additional CSS classes |

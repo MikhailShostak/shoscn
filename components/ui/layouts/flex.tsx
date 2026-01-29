@@ -1,21 +1,18 @@
+import { cn } from '@/lib/utils';
+
 export type FlexDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse';
 export type JustifyContent = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 export type AlignItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
 
-export interface FlexProps {
-  children: React.ReactNode;
-  direction?: FlexDirection;
+export interface FlexProps extends React.ComponentProps<"div"> {
   justify?: JustifyContent;
   align?: AlignItems;
-  gap?: string;
+  row?: boolean;
+  reversed?: boolean;
+  withPaddings?: boolean;
+  expanded?: boolean;
+  className?: string;
 }
-
-const flexDirectionClasses: Record<FlexDirection, string> = {
-  'row': 'flex flex-row',
-  'row-reverse': 'flex flex-row-reverse',
-  'col': 'flex flex-col',
-  'col-reverse': 'flex flex-col-reverse',
-};
 
 const justifyContentClasses: Record<JustifyContent, string> = {
   'start': 'justify-start',
@@ -34,18 +31,29 @@ const alignItemsClasses: Record<AlignItems, string> = {
   'stretch': 'items-stretch',
 };
 
-export const Flex = ({
-  children,
-  direction = 'row',
+export function Flex({
   justify = 'start',
-  align = 'start',
-  gap = 'gap-4'
-}: FlexProps) => {
+  align = 'stretch',
+  row,
+  reversed,
+  withPaddings,
+  expanded,
+  className,
+  ...props
+}: FlexProps) {
+  const direction = `${row ? 'flex-row' : 'flex-col'}${reversed ? '-reverse' : ''}`;
   return (
-    <div className={`${flexDirectionClasses[direction]} ${justifyContentClasses[justify]} ${alignItemsClasses[align]} ${gap}`}>
-      {children}
-    </div>
+    <div
+      className={cn(
+        'flex',
+        direction,
+        justifyContentClasses[justify],
+        alignItemsClasses[align],
+        withPaddings && 'p-(--flex-padding) gap-(--flex-gap)',
+        expanded && 'flex-1',
+        className
+      )}
+      {...props}
+    />
   );
-};
-
-export default Flex;
+}
