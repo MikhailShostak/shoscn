@@ -343,6 +343,133 @@
       "registryDependencies": []
     },
     {
+      "name": "use-auto-scroll",
+      "type": "registry:hook",
+      "title": "useAutoScroll",
+      "description": "A hook for auto-scrolling to bottom when content changes",
+      "files": [
+        {
+          "path": "components/hooks/use-auto-scroll.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-auto-scroll.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A custom scroll area component with inner content styling",
+      "files": [
+        {
+          "path": "components/ui/layouts/scroll-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/scroll-area.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [
+        "scroll-area"
+      ]
+    },
+    {
+      "name": "scrollpage",
+      "type": "registry:ui",
+      "title": "Scroll Page",
+      "description": "A scrollable page layout with header, content, and footer sections",
+      "files": [
+        {
+          "path": "components/ui/layouts/scrollpage.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/scrollpage.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "@shoscn/flex",
+        "@shoscn/scroll-area"
+      ]
+    },
+    {
+      "name": "titlebar",
+      "type": "registry:ui",
+      "title": "Titlebar",
+      "description": "A titlebar provider and components for dynamic header content",
+      "files": [
+        {
+          "path": "components/ui/layouts/titlebar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/titlebar.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "menulayout",
+      "type": "registry:ui",
+      "title": "Menu Layout",
+      "description": "A responsive menu layout with sidebar and content areas",
+      "files": [
+        {
+          "path": "components/ui/layouts/menulayout.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/menulayout.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "@shoscn/flex",
+        "@shoscn/titlebar",
+        "@shoscn/scrollpage"
+      ]
+    },
+    {
+      "name": "recycling-view",
+      "type": "registry:ui",
+      "title": "Recycling View",
+      "description": "A virtualized list component with recycling provider",
+      "files": [
+        {
+          "path": "components/ui/layouts/recycling-view.tsx",
+          "type": "registry:component",
+          "target": "components/ui/layouts/recycling-view.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "@shoscn/recycling-provider",
+        "@shoscn/scroll-area"
+      ]
+    },
+    {
+      "name": "scroll-to-bottom-button",
+      "type": "registry:ui",
+      "title": "Scroll To Bottom Button",
+      "description": "A floating button that scrolls to the bottom of a container",
+      "files": [
+        {
+          "path": "components/ui/utils/scroll-to-bottom-button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/utils/scroll-to-bottom-button.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -360,14 +487,21 @@
         "@shoscn/flex",
         "@shoscn/grid",
         "@shoscn/image-area",
+        "@shoscn/menulayout",
         "@shoscn/named-section",
         "@shoscn/page",
+        "@shoscn/recycling-view",
+        "@shoscn/scroll-area",
+        "@shoscn/scroll-to-bottom-button",
+        "@shoscn/scrollpage",
+        "@shoscn/titlebar",
         "@shoscn/video-loop",
         "@shoscn/grid-size-switcher",
         "@shoscn/iframe",
         "@shoscn/spinner",
         "@shoscn/status-indicator",
         "@shoscn/recycling-provider",
+        "@shoscn/use-auto-scroll",
         "@shoscn/use-debounce",
         "@shoscn/use-timer"
       ]
