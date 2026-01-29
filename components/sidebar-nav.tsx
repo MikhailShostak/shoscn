@@ -109,7 +109,9 @@ const navigation = [
     items: [
       { title: 'useDebounce', href: '/hooks/use-debounce' },
       { title: 'useFadeElement', href: '/hooks/use-fade-element' },
+      { title: 'useShortcut', href: '/hooks/use-shortcut' },
       { title: 'useTimer', href: '/hooks/use-timer' },
+      { title: 'useUrlState', href: '/hooks/use-url-state' },
       { title: 'useVideoLoop', href: '/hooks/use-video-loop' },
     ],
   },

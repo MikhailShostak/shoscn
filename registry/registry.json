@@ -470,6 +470,36 @@
       ]
     },
     {
+      "name": "use-shortcut",
+      "type": "registry:hook",
+      "title": "useShortcut",
+      "description": "A hook for handling keyboard shortcuts",
+      "files": [
+        {
+          "path": "components/hooks/use-shortcut.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-shortcut.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "use-url-state",
+      "type": "registry:hook",
+      "title": "useUrlState",
+      "description": "Hooks for managing URL query parameters with useState-like API",
+      "files": [
+        {
+          "path": "components/hooks/use-url-state.ts",
+          "type": "registry:hook",
+          "target": "components/hooks/use-url-state.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
       "name": "all",
       "type": "registry:ui",
       "title": "All Components",
@@ -503,7 +533,9 @@
         "@shoscn/recycling-provider",
         "@shoscn/use-auto-scroll",
         "@shoscn/use-debounce",
-        "@shoscn/use-timer"
+        "@shoscn/use-shortcut",
+        "@shoscn/use-timer",
+        "@shoscn/use-url-state"
       ]
     }
   ]
