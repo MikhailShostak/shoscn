@@ -19,7 +19,7 @@ export const NamedSection = ({ title, menu, children }: NamedSectionProps) => {
           </div>
         )}
       </div>
-      <div className="p-4">
+      <div className="p-2 pt-4">
         {children}
       </div>
     </div>
