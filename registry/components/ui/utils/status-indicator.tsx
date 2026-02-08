@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cn } from '@/lib/utils';
 
-type StatusVariant = 'primary' | 'secondary' | 'muted' | 'accent' | 'success' | 'warning' | 'destructive';
+export type StatusVariant = 'primary' | 'secondary' | 'muted' | 'accent' | 'success' | 'warning' | 'destructive';
 
 export interface StatusIndicatorProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'className'> {
   variant?: StatusVariant;

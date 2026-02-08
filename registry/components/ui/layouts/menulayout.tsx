@@ -3,7 +3,7 @@ import { Flex } from "@/components/ui/layouts/flex";
 import { BackButton, useTitlebar } from "@/components/ui/layouts/titlebar";
 import { ScrollContent, ScrollFooter, ScrollHeader, ScrollPage } from "@/components/ui/layouts/scrollpage";
 
-interface MenuLayoutProps {
+export interface MenuLayoutProps {
   isOpened: boolean,
   onClosed?: () => void,
   menuHeader?: React.ReactNode,
