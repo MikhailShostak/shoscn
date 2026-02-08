@@ -11,7 +11,7 @@ import { GridSizeSwitcherBasic } from '@/components/examples/utils-examples';
 <ComponentPreview
   preview={<GridSizeSwitcherBasic />}
   code={`import { useState } from 'react';
-import { Grid, GridSize } from '@/components/ui/layouts/grid';
+import { Grid, GridSize } from '@/components/ui/layout/grid';
 import { GridSizeSwitcher } from '@/components/ui/utils/grid-size-switcher';
 
 export default function Example() {
@@ -46,7 +46,7 @@ npx shadcn@latest add @shoscn/grid-size-switcher
 ```tsx
 import { useState } from 'react';
 import { GridSizeSwitcher } from '@/components/ui/utils/grid-size-switcher';
-import { Grid, GridSize } from '@/components/ui/layouts/grid';
+import { Grid, GridSize } from '@/components/ui/layout/grid';
 
 export default function MyComponent() {
   const [size, setSize] = useState<GridSize>('medium');

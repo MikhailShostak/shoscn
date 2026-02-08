@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Flex } from "@/components/ui/layouts/flex";
-import { ScrollArea } from "@/components/ui/layouts/scroll-area";
+import { Flex } from "@/registry/components/ui/layout/flex";
+import { ScrollArea } from "@/registry/components/ui/layout/scroll-area";
 
 export function ScrollPage({ className, children, ...props }: { className?: string, children: React.ReactNode }) {
   return (

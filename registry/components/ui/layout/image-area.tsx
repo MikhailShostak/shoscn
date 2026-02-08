@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { FixedArea } from '@/components/ui/layouts/fixed-area';
+import { FixedArea } from '@/registry/components/ui/layout/fixed-area';
 
 export interface ImageAreaProps {
   children: React.ReactNode;

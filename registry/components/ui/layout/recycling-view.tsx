@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import { RecyclingProvider } from '@/components/providers/recycling-provider';
-import { ScrollArea } from '@/components/ui/layouts/scroll-area';
+import { ScrollArea } from '@/registry/components/ui/layout/scroll-area';
 
 interface RecyclingViewBaseProps<T> {
   items: T[];

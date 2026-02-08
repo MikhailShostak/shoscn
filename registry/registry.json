@@ -242,9 +242,9 @@
       "description": "A responsive grid layout component",
       "files": [
         {
-          "path": "components/ui/layouts/grid.tsx",
+          "path": "components/ui/layout/grid.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/grid.tsx"
+          "target": "components/ui/layout/grid.tsx"
         }
       ],
       "dependencies": [],
@@ -257,9 +257,9 @@
       "description": "A flexible flexbox layout component with support for all four directions",
       "files": [
         {
-          "path": "components/ui/layouts/flex.tsx",
+          "path": "components/ui/layout/flex.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/flex.tsx"
+          "target": "components/ui/layout/flex.tsx"
         }
       ],
       "dependencies": [],
@@ -272,9 +272,9 @@
       "description": "A flexible page container with padding",
       "files": [
         {
-          "path": "components/ui/layouts/page.tsx",
+          "path": "components/ui/layout/page.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/page.tsx"
+          "target": "components/ui/layout/page.tsx"
         }
       ],
       "dependencies": [],
@@ -287,9 +287,9 @@
       "description": "A fixed area container with absolute positioning and centered content",
       "files": [
         {
-          "path": "components/ui/layouts/fixed-area.tsx",
+          "path": "components/ui/layout/fixed-area.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/fixed-area.tsx"
+          "target": "components/ui/layout/fixed-area.tsx"
         }
       ],
       "dependencies": [],
@@ -302,9 +302,9 @@
       "description": "A fixed area with a blurred background image effect",
       "files": [
         {
-          "path": "components/ui/layouts/image-area.tsx",
+          "path": "components/ui/layout/image-area.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/image-area.tsx"
+          "target": "components/ui/layout/image-area.tsx"
         }
       ],
       "dependencies": [],
@@ -319,9 +319,9 @@
       "description": "A bordered section container with a title and optional menu",
       "files": [
         {
-          "path": "components/ui/layouts/named-section.tsx",
+          "path": "components/ui/layout/named-section.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/named-section.tsx"
+          "target": "components/ui/layout/named-section.tsx"
         }
       ],
       "dependencies": [],
@@ -364,9 +364,9 @@
       "description": "A custom scroll area component with inner content styling",
       "files": [
         {
-          "path": "components/ui/layouts/scroll-area.tsx",
+          "path": "components/ui/layout/scroll-area.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/scroll-area.tsx"
+          "target": "components/ui/layout/scroll-area.tsx"
         }
       ],
       "dependencies": [
@@ -383,9 +383,9 @@
       "description": "A scrollable page layout with header, content, and footer sections",
       "files": [
         {
-          "path": "components/ui/layouts/scrollpage.tsx",
+          "path": "components/ui/layout/scrollpage.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/scrollpage.tsx"
+          "target": "components/ui/layout/scrollpage.tsx"
         }
       ],
       "dependencies": [],
@@ -401,9 +401,9 @@
       "description": "A titlebar provider and components for dynamic header content",
       "files": [
         {
-          "path": "components/ui/layouts/titlebar.tsx",
+          "path": "components/ui/layout/titlebar.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/titlebar.tsx"
+          "target": "components/ui/layout/titlebar.tsx"
         }
       ],
       "dependencies": [
@@ -420,9 +420,9 @@
       "description": "A responsive menu layout with sidebar and content areas",
       "files": [
         {
-          "path": "components/ui/layouts/menulayout.tsx",
+          "path": "components/ui/layout/menulayout.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/menulayout.tsx"
+          "target": "components/ui/layout/menulayout.tsx"
         }
       ],
       "dependencies": [],
@@ -439,9 +439,9 @@
       "description": "A virtualized list component with recycling provider",
       "files": [
         {
-          "path": "components/ui/layouts/recycling-view.tsx",
+          "path": "components/ui/layout/recycling-view.tsx",
           "type": "registry:component",
-          "target": "components/ui/layouts/recycling-view.tsx"
+          "target": "components/ui/layout/recycling-view.tsx"
         }
       ],
       "dependencies": [],

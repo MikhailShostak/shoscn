@@ -1,11 +1,11 @@
 'use client';
 
-import { FixedArea } from '@/components/ui/layouts/fixed-area';
-import { Flex } from '@/components/ui/layouts/flex';
-import { Grid } from '@/components/ui/layouts/grid';
-import { ImageArea } from '@/components/ui/layouts/image-area';
-import { NamedSection } from '@/components/ui/layouts/named-section';
-import { Page } from '@/components/ui/layouts/page';
+import { FixedArea } from '@/registry/components/ui/layout/fixed-area';
+import { Flex } from '@/registry/components/ui/layout/flex';
+import { Grid } from '@/registry/components/ui/layout/grid';
+import { ImageArea } from '@/registry/components/ui/layout/image-area';
+import { NamedSection } from '@/registry/components/ui/layout/named-section';
+import { Page } from '@/registry/components/ui/layout/page';
 
 export function FlexRow() {
   return (

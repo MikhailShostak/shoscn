@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Grid, GridSize } from '@/components/ui/layouts/grid';
+import { Grid, GridSize } from '@/registry/components/ui/layout/grid';
 import { GridSizeSwitcher } from '@/components/ui/utils/grid-size-switcher';
 
 export function GridSizeSwitcherBasic() {
